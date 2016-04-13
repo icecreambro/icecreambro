@@ -1,0 +1,198 @@
+#top-material {
+    position: scroll;
+}
+#background-image {
+    opacity: .3;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1000;
+}
+#navbar {
+    z-index: 1000;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgba(43, 43, 43, 0.2);
+    height: 4em;
+    overflow: hidden;
+}
+#navbar td {
+    text-align: center;
+}
+#navbar a {
+    display: inline-block;
+    color: white;
+    height: auto;
+    text-decoration: none;
+    font-size: 3vw;
+}
+body {
+    background-color: #2B2B2B;
+    color: #FFFFFF;
+    font-family: amatic-sc, sans-serif;
+}
+h1 {
+    color: #AAEEFF;
+    text-align: center;
+}
+#icecreambro {
+    text-align: center;
+    width: 100%;
+    font-size: 15vw;
+    position: absolute;
+    top: -.3em;
+}
+#first,
+#second,
+#order-button {
+    color: mintcream;
+    text-align: center;
+    width: 100%;
+    font-size: 5vw;
+    position: absolute;
+}
+#first {
+    top: 38%;
+}
+#second {
+    top: 50%;
+}
+#arrow {
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+#order-button {
+    font-size: 3vw;
+    top: 72%;
+}
+#white-background {
+    background-color: mintcream;
+}
+#order,
+#how-it-works,
+#about-us {
+    padding-top: 25px;
+    height: 100vh;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#order {
+    height: auto;
+    font-size: 35px;
+}
+#form {
+    text-align: center;
+}
+#how-it-works {
+    color: #2B2B2B;
+    text-align: center;
+    font-size: 35px;
+    width: 75%;
+}
+#about-us {
+    text-align: center;
+    font-size: 30px;
+    width: 80%;
+}
+#about-us a {
+    color: white;
+    text-decoration: none;
+}
+#personal-snap {
+    text-align: center;
+    width: 100%;
+}
+#jake-snap,
+#reid-snap {
+    width: 100%;
+}
+#social-desktop {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+#facebook,
+#twitter {
+    width: 75%;
+}
+
+/*DESKTOP-SPECIFIC*/
+
+@media only screen and (min-width: 15.81cm) {
+    #au-mobile,
+    #social-mobile {
+        display: none;
+    }
+}
+
+/*MOBILE-SPECIFIC*/
+
+@media only screen and (max-width: 15.81cm) {
+    #navbar {
+        z-index: 1000;
+        width: 150%;
+        position: fixed;
+        top: 0;
+        left: -25%;
+        background-color: rgba(43, 43, 43, 0.2);
+        height: 3em;
+        overflow: hidden;
+    }
+    #navbar td {
+        text-align: center;
+    }
+    #navbar a {
+        display: inline-block;
+        color: white;
+        height: auto;
+        text-decoration: none;
+        font-size: 7vw;
+    }
+    #icecreambro {
+        top: .15em;
+        font-size: 22vw;
+    }
+    #first {
+        top: 6.5em;
+        font-size: 7vw;
+    }
+    #second {
+        top: 8.5em;
+        font-size: 7vw;
+    }
+    #order-button {
+        top: 33em;
+        font-size: 3vw;
+    }
+    #how-it-works,
+    #about-us {
+        width: 95%;
+    }
+    #how-it-works {
+        font-size: 7vw;
+    }
+    #about-us {
+        font-size: 7vw;
+    }
+    #au-desktop {
+        margin-top: -10em;
+    }
+    #social-mobile {
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+    #facebook,
+    #twitter,
+    #snapchat {
+        width: 100%;
+    }
+    #au-desktop,
+    #social-desktop {
+        display: none;
+    }
+}
