@@ -62,7 +62,6 @@ h1 {
     top: 72%;
     left: 50%;
     transform: translateX(-50%);
-    
 }
 #order-button {
     font-size: 3vw;
@@ -84,7 +83,8 @@ h1 {
     height: auto;
     font-size: 35px;
 }
-#form {
+#form-desktop,
+#form-mobile {
     text-align: center;
 }
 #how-it-works {
@@ -123,6 +123,7 @@ h1 {
 /*DESKTOP-SPECIFIC*/
 
 @media only screen and (min-width: 15.81cm) {
+    #form-mobile,
     #au-mobile,
     #social-mobile {
         display: none;
@@ -191,6 +192,7 @@ h1 {
     #snapchat {
         width: 100%;
     }
+    #form-desktop,
     #au-desktop,
     #social-desktop {
         display: none;
