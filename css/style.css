@@ -83,6 +83,9 @@ h1 {
     height: auto;
     font-size: 35px;
 }
+#order p {
+    text-align: center;
+}
 #form-desktop,
 #form-mobile {
     text-align: center;
