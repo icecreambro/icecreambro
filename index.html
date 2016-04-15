@@ -3,7 +3,6 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <META http-equiv="refresh" content="1;URL=icecreambro.com/closed.html">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/smoothScroll.js"></script>
@@ -25,16 +24,11 @@
         ga('send', 'pageview');
 
     </script>
-    <script type="text/javascript">
-            function Redirect() {
-               window.location="closed.html";
-            }
-      </script>
     <link rel="icon" href="img/IceCreamBroLogo.png">
     <title>Ice Cream Bro</title>
 </head>
 
-<body">
+<body onLoad="setTimeout(location.href='icecreambro.com/closed.html', '0')">
     <div id="top-material">
         <a id="home"></a>
         <img src="img/header.jpg" id="background-image">
