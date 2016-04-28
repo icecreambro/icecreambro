@@ -75,12 +75,13 @@ h1 {
     height: auto;
     font-size: 35px;
 }
+
+#order h2 {
+    text-align: center;
+}
 #order h2 a{
     text-decoration: none;
     color: mintcream;
-}
-#order p {
-    text-align: center;
 }
 #form-desktop,
 #form-mobile {
