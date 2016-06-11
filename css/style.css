@@ -1,0 +1,553 @@
+.hidden-mobile {
+    display: none;
+}
+.one-page {
+    height: 100vh;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #282A2C;
+    font-family: advent-pro, sans-serif;
+    overflow-x: hidden;
+    bottom: -10em;
+    color: white;
+}
+#landing-page {
+    top: 0;
+    height: 100vh;
+    background: url('/img/testBackgroundMobile.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#landing-page h1 {
+    color: white;
+    top: 0;
+    text-align: center;
+    font-size: 3.4em;
+    margin-top: 0px;
+    padding-top: 15px;
+}
+#landing-page h2 {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
+.area {
+    background: #282A2C;
+    width: 100vw;
+}
+#order-form {
+    height: 98vh;
+}
+#order-form header {
+    text-align: center;
+    padding: 3% 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+.input-area label {
+    display: table-header-group;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 115%;
+}
+.input-area input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    background: transparent;
+    color: #ffffff;
+    display: table-row-group;
+    transition: all 0.3s ease;
+}
+.input-area input:focus {
+    outline: none;
+    border-color: #69B692;
+    color: #69b692;
+}
+.check-area {
+    text-align: left;
+    padding-top: 15%;
+}
+.check-area input[type="checkbox"] {
+    display: none !important;
+}
+.check-area label::before,
+.check-area label::after {
+    position: absolute;
+    content: '';
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+.check-area label::before {
+    top: 50%;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    margin-top: -8px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+.check-area label::after {
+    opacity: 0;
+    top: 50%;
+    left: 3px;
+    width: 8px;
+    height: 4px;
+    margin-top: -4px;
+    border-left: 2px solid #69B692;
+    border-bottom: 2px solid #69B692;
+    -webkit-transform: rotate(-45deg) scale(.5);
+    transform: rotate(-45deg) scale(.5);
+}
+.check-area label:hover::before {
+    border-color: #69B692;
+}
+.check-area input[type="checkbox"]:checked + label::before {
+    border: 1px solid #69B692;
+}
+.check-area input[type="checkbox"]:checked + label::after {
+    opacity: 1;
+    -webkit-transform: rotate(-45deg) scale(1);
+    transform: rotate(-45deg) scale(1);
+}
+.check-area input[type="checkbox"]:checked + label {
+    color: #69B692;
+}
+.check-area select {
+    background: transparent;
+    width: 25px;
+    padding: 5px;
+    font-size: 12px;
+    line-height: 1;
+    height: 25px;
+    -webkit-appearance: none;
+    cursor: pointer;
+    border: 2px solid #69B692;
+    border-radius: 3px;
+    color: #69B692;
+    outline: none;
+}
+.check-area p {
+    color: #69B692;
+    display: inline;
+    font-size: 125%;
+}
+.check-area label {
+    position: relative;
+    display: inline-block;
+    padding: 3px 3px 3px 30px;
+    cursor: pointer;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    font-size: 125%;
+}
+.quantity-selector {
+    margin-left: 15%;
+}
+#form-buttons {
+    text-align: center;
+    padding-top: 15%;
+}
+.btn {
+    -webkit-appearance: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    outline: none;
+    width: 35%;
+    margin-right: 3%;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+/*Make this on-click*/
+
+.btn:hover {
+    color: #69B692;
+    border-color: #69B692;
+    cursor: pointer;
+}
+.modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 200ms ease-in;
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 200ms ease-in;
+    pointer-events: none;
+    display: block;
+}
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    width: 75%;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+.modalDialog h2 {
+    font-size: 2em;
+}
+.modalDialog button a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+#promoCode {
+    width: 50%;
+    margin-bottom: 10px;
+}
+#apply {
+    margin-left: 10px;
+    box-sizing: border-box;
+    padding: 15px;
+    background: transparent;
+    font-size: 1.05em;
+}
+#apply:hover {
+    color: #69B692;
+    border-color: #69B692;
+    cursor: pointer;
+}
+.valid-promo {
+    color: #69B692 !important;
+    border-color: #69B692 !important;
+    outline: none;
+}
+#invalid-promo {
+    color: red !important;
+}
+#confirmation-modal {
+    text-align: center;
+}
+#about-page {
+    color: white;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+#about-comp h1 {
+    margin-bottom: 0;
+}
+#about-text p {
+    text-align: left;
+}
+.people {
+    text-align: left;
+}
+.people h2,
+h3 {
+    margin: 3px;
+}
+#contact-page {
+    color: white;
+    width: 90% !important;
+    margin: 0 auto;
+}
+#contact-page h1 {
+    text-align: center;
+    white-space: nowrap;
+}
+#social-links table,
+#email-signup {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+#email-signup {
+    margin-top: 15px;
+}
+#email-signup input {
+    box-sizing: border-box;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    background: transparent;
+    color: #ffffff;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+#email-signup input[type="text"] {
+    width: 38%;
+}
+#email-signup input[type="submit"] {
+    width: 20%;
+}
+@media only screen and (min-width: 15.81cm) {
+    .hidden-desktop {
+        display: none;
+    }
+    #navbar {
+        text-align: center;
+        background-color: white;
+        width: 100vw;
+        display: inline;
+    }
+    #navbar table {
+        z-index: 100;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        position: fixed;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        background-color: white;
+        border-collapse: collapse;
+    }
+    #links {
+        border-bottom: 2px solid;
+        border-top: 2px solid;
+        border-color: black;
+    }
+    #navbar table a {
+        display: block;
+        color: black;
+        padding: 10px 10px;
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+    #landing-page {
+        background-image: url('/img/testBackground.gif');
+    }
+    #landing-page h1 {
+        font-size: 8em;
+        padding-top: .75em;
+    }
+    #landing-page h2 {
+        font-size: 4em;
+    }
+    #landing-page br {
+        display: none;
+    }
+    #background-picture {
+        display: block;
+        width: 100vw;
+        height: 108vh;
+        margin-left: -.5em;
+        opacity: .7;
+        z-index: -1000;
+    }
+    #landing-page h2 {
+        top: 3em;
+    }
+    #order-button {
+        position: absolute;
+        bottom: 0em;
+        display: block;
+    }
+    #order-form {
+        width: 50%;
+        margin: 50px auto;
+    }
+    #order-form header {
+        font-size: 1.7em;
+        padding: 3% 0;
+    }
+    .area {
+        color: rgba(255, 255, 255, 0.2);
+        width: 100%;
+    }
+    .row {
+        margin: 20px 0;
+        width: 100%;
+        padding: 0;
+        display: table;
+    }
+    .col2 {
+        display: table;
+        width: 47%;
+        float: left;
+    }
+    .col2:nth-child(1) {
+        float: right;
+        display: table;
+    }
+    #order-form label {
+        line-height: 35px;
+        font-size: 1.05em;
+        text-align: center;
+    }
+    #order-form input {
+        padding: 15px;
+        font-size: 1.05em;
+    }
+    .input-area div {
+        margin-left: 10px;
+    }
+    .check-area {
+        text-align: left;
+        padding-top: initial;
+    }
+    #form-buttons {
+        padding: 0;
+    }
+    #form-buttons button {
+        height: 45px;
+    }
+    .modalDialog {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 99999;
+        opacity: 0;
+        -webkit-transition: opacity 200ms ease-in;
+        -moz-transition: opacity 200ms ease-in;
+        transition: opacity 200ms ease-in;
+        pointer-events: none;
+        display: block;
+    }
+    .modalDialog:target {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .modalDialog > div {
+        width: 35%;
+        position: relative;
+        margin: 10% auto;
+        padding: 5px 20px 13px 20px;
+        border-radius: 10px;
+        background: #fff;
+        background: -moz-linear-gradient(#fff, #999);
+        background: -webkit-linear-gradient(#fff, #999);
+        background: -o-linear-gradient(#fff, #999);
+    }
+    .modalDialog h2 {
+        font-size: 2em;
+    }
+    .modalDialog button a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+    #promoCode {
+        width: 50%;
+        height: 35px;
+        margin-bottom: 10px;
+    }
+    #apply {
+        margin-left: 10px;
+        height: 35px;
+        box-sizing: border-box;
+        padding: 1px 15px;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-radius: 5px;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        font-size: 1.05em;
+    }
+    #apply:hover {
+        color: #69B692;
+        border-color: #69B692;
+        cursor: pointer;
+    }
+    .valid-promo {
+        color: #69B692 !important;
+        border-color: #69B692 !important;
+        outline: none;
+    }
+    #invalid-promo {
+        color: red !important;
+    }
+    #about-page {
+        padding-top: 3em;
+    }
+    #about-page h1 {
+        font-size: 6em;
+    }
+    #about-page iframe {
+        width: 560px;
+        height: 315px;
+    }
+    #about-text p {
+        font-size: 1.5em;
+    }
+    #contact-page {
+        width: 70%;
+    }
+    #contact-page h1 {
+        padding-top: 0.5em;
+        font-size: 6em;
+        margin-bottom: 10px;
+    }
+    #social-links-desktop table,
+    #email-signup {
+        max-width: 50em;
+    }
+    #email-signup {
+        padding-top: 25px;
+    }
+    #email-signup header {
+        font-size: 1.5em;
+    }
+    #email-signup input[type="text"] {
+        width: 30% !important;
+    }
+    #email-signup input[type="submit"] {
+        width: 15% !important;
+    }
+    #social-links-desktop {
+        display: block;
+        text-align: center;
+    }
+    #newsroom {
+        padding-top: 6em;
+    }
+    #newsroom h1 {
+        font-size: 6em;
+        text-align: center;
+    }
+    #stories{
+        width: 100%;
+    }
+    .story{
+        display: inline;
+    }
+    .story-img{
+        width: 33%;
+    }
+    .story-teaser{
+        width: 66%;
+    }
+    /*
+    #social-links {
+        width: 47%;
+        float: right;
+    }
+    #social-links a {
+        display: block;
+        color: white;
+        padding: 10px 10px;
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+*/
+}
