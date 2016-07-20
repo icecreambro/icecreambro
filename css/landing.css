@@ -5,15 +5,19 @@ html, body{
     font-family: Gotham;
     font-weight:bold;
     text-align: center;
-}
-
-.background{
-    height:100%;
-    width:100%;
+    overflow-y: hidden;
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
-    
+}
+
+#background{
+    height:100%;
+    width:100%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     text-align: center;
 }
 img{
@@ -30,14 +34,41 @@ p{
     text-decoration: none;
 }
 
-@media (min-width: 320px) 
-  and (max-width: 575px) {
+@media (max-width: 1200px) {
       img{
-          margin-top:30%;
+          margin-top:2%;
           width:450px;
           height:auto;
       }
       p{
           font-size:28px;
+      }
+}
+
+@media (max-width: 900px) {
+      img{
+          margin-top:10%;
+          width:375px;
+          height:auto;
+      }
+      p{
+          font-size:23px;
+      }
+}
+
+@media (max-width: 650px) {
+      p{
+          font-size:22px;
+      }
+}
+
+@media (max-width: 575px) {
+      img{
+          margin-top:30%;
+          width:300px;
+          height:auto;
+      }
+      p{
+          font-size:16px;
       }
 }
