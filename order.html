@@ -10,7 +10,7 @@
     <!--    <script src="js/smoothScroll.js"></script>-->
 
     <!-- Make sure icon is actual logo -->
-    <link rel="icon" href="img/iceCreamBroLogo.png">
+    <link rel="icon" href="img/Ice%20Cream%20Bro.png">
     <title>Ice Cream Bro</title>
 </head>
 
@@ -43,9 +43,9 @@
             <tr id="links">
                 <td width="17%"><a href="about-us.html">Our Story</a></td>
                 <td width="17%"><a href="contact-us.html">Contact Us</a></td>
-                <td width="27%"><img src="img/plus-button%20(1).png"></td>
+                <td width="27%"><img src="img/bowl.png"></td>
                 <td width="17%"><a href="newsroom.html">Newsroom</a></td>
-                <td width="17%"><a href="https://squareup.com/store/ice-cream-bro">Swag Shop</a></td>
+                <td width="17%"><a href="store.icecreambro.com">Swag Shop</a></td>
             </tr>
             <tr height="18"></tr>
         </table>
@@ -56,7 +56,7 @@
     </div>
 
     <div class="area">
-        <form id="order-form" action="https://formspree.io/jake@icecreambro.com" method="POST">
+        <form id="order-form">
             <div class="input-area">
                 <header>Info.</header>
                 <div class="col2">
@@ -84,7 +84,7 @@
                         <label for="CD">Super Chunky Cookie Dough</label>
                         <div id="numCD" style="display: none" class="quantity-selector">
                             <p>x</p>
-                            <select onchange="subtotal(numCD)" name="CD-quantity">
+                            <select onchange="subtotal(numCD)">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -99,7 +99,7 @@
                         <label for="MC">Mint Chocolate Chip</label>
                         <div id="numMC" style="display: none" class="quantity-selector">
                             <p>x</p>
-                            <select onchange="subtotal(numMC)" name="MC-quantity">
+                            <select onchange="subtotal(numMC)">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -116,7 +116,7 @@
                         <label for="CC">Cookies &amp; Creme</label>
                         <div id="numCC" style="display: none" class="quantity-selector">
                             <p>x</p>
-                            <select onchange="subtotal(numCC)" name="CC-quantity">
+                            <select onchange="subtotal(numCC)">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -131,7 +131,7 @@
                         <label for="PBP">Peanut Butter Party</label>
                         <div id="numPBP" style="display: none" class="quantity-selector">
                             <p>x</p>
-                            <select onchange="subtotal(numPBP)" name="PBP-quantity">
+                            <select onchange="subtotal(numPBP)">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -148,7 +148,7 @@
                         <label for="SFB">Super Fudge Brownie</label>
                         <div id="numSFB" style="display: none" class="quantity-selector">
                             <p>x</p>
-                            <select onchange="subtotal(numSFB)" name="SFB-quantity">
+                            <select onchange="subtotal(numSFB)">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -163,7 +163,7 @@
                         <label for="SCC">Salted Caramel Craze</label>
                         <div id="numSCC" style="display: none" class="quantity-selector">
                             <p>x</p>
-                            <select onchange="subtotal(numSCC)" name="SCC-quantity">
+                            <select onchange="subtotal(numSCC)">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -177,8 +177,7 @@
             </div>
             <div id="form-buttons" class="row">
                 <a href="#confirmation-modal">
-                    <input type="hidden" name="_next" value="order-complete.html" />
-                    <button type="submit" id="confirm" class="btn" onclick="displayOrder(createOrder())">Place Order</button>
+                    <button type="button" id="confirm" class="btn" onclick="displayOrder(createOrder())">Place Order</button>
                 </a>
                 <button type="reset" id="cancel" class="btn">Cancel</button>
             </div>
