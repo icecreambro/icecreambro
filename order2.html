@@ -62,18 +62,18 @@
                     <legend>Info.</legend>
                     <div class="form-group">
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" id="name" placeholder="Name">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name">
                         </div>
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" id="number" placeholder="Number">
+                            <input type="text" class="form-control" id="number" name="number" placeholder="Number">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" id="name" placeholder="Building & Room">
+                            <input type="text" class="form-control" id="location" name="location" placeholder="Building & Room">
                         </div>
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" id="number" placeholder="Delivery Time">
+                            <input type="text" class="form-control" id="time" name="time" placeholder="Delivery Time">
                         </div>
                     </div>
 
@@ -85,7 +85,7 @@
                             <div class="col-xs-8">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="sccd" onclick="ShowQuan('sccd')"> Super Chunky Cookie Dough
+                                        <input type="checkbox" name="sccd" onclick="showQuan('sccd')"> Super Chunky Cookie Dough
                                     </label>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                             <div class="col-xs-8">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="mcc" onclick="ShowQuan('mcc')"> Mint Chocolate Chip
+                                        <input type="checkbox" name="mcc" onclick="showQuan('mcc')"> Mint Chocolate Chip
                                     </label>
                                 </div>
                             </div>
@@ -121,7 +121,7 @@
                             <div class="col-xs-8">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="sfb" onclick="ShowQuan('sfb')"> Super Fudge Brownie
+                                        <input type="checkbox" name="sfb" onclick="showQuan('sfb')"> Super Fudge Brownie
                                     </label>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@
                             <div class="col-xs-8">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="scc" onclick="ShowQuan('scc')"> Salted Caramel Craze
+                                        <input type="checkbox" name="scc" onclick="showQuan('scc')"> Salted Caramel Craze
                                     </label>
                                 </div>
                             </div>
@@ -159,7 +159,7 @@
                             <div class="col-xs-8">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="cc" onclick="ShowQuan('cc')"> Cookies &amp; Creme
+                                        <input type="checkbox" name="cc" onclick="showQuan('cc')"> Cookies &amp; Creme
                                     </label>
                                 </div>
                             </div>
@@ -177,7 +177,7 @@
                             <div class="col-xs-8">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="pbp" onclick="ShowQuan('pbp')"> Peanut Butter Party
+                                        <input type="checkbox" name="pbp" onclick="showQuan('pbp')"> Peanut Butter Party
                                     </label>
                                 </div>
                             </div>
@@ -197,17 +197,30 @@
                 </fieldset>
                 <div class="form-group">
                     <div class="col-xs-12 submit-buttons">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary disabled">Submit</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
     <script>
-        function ShowQuan(flav) {
+        function showQuan(flav) {
             $("select[name=" + flav + "-quantity]").toggle();
+            validateForm()
         }
 
+        $('input[type=text]').change(validateForm);
+        
+        function validateForm() {
+            var name = $('#name').val(), num = $('#number').val(), loc = $('#location').val(), time = $('#time').val();
+            var flavors = $(':checkbox:checked').first().val();
+            if(name != '' && num != '' && loc != '' && time != '' && flavors == 'on'){
+               $('.submit-buttons button').removeClass('disabled');
+            } else {
+                $('.submit-buttons button').addClass('disabled');
+            } 
+        }
+        
         $('body').scrollspy({
             target: ".smooth"
         });
