@@ -1,3 +1,9 @@
+h1 {
+    font-size: 43px;
+}
+h2 {
+    font-size: 30px;
+}
 .full-page {
     height: 92vh;
 }
@@ -7,13 +13,7 @@
 .landing-page .row {
     padding-top: 10vh;
 }
-.landing-page h1 {
-    font-size: 43px;
-}
-.landing-page h2 {
-    font-size: 30px;
-}
-.order-page {
+#order {
     height: 80vh;
 }
 .flavors .col-xs-8,
@@ -26,16 +26,28 @@
 .submit-buttons {
     text-align: center;
 }
+.about {
+    text-align: center;
+}
+.contact {
+    text-align: center;
+}
+.contact .row {
+    padding: 50px 0;
+}
+.contact form legend {
+    padding-bottom: 10px;
+}
 @media(min-width: 600px) {
-    .landing-page h1 {
+    h1 {
         font-size: 85px;
     }
-    .landing-page h2 {
+    h2 {
         font-size: 50px;
     }
 }
 @media (max-width: 599px) and (min-width: 440px) {
-    .landing-page h1 {
+    h1 {
         font-size: 60px;
     }
 }
