@@ -13,7 +13,7 @@ h2 {
 .landing-page .row {
     padding-top: 10vh;
 }
-.order-page {
+#order {
     height: 80vh;
 }
 .flavors .col-xs-8,
@@ -33,7 +33,10 @@ h2 {
     text-align: center;
 }
 .contact .row {
-    padding-top: 50px;
+    padding: 50px 0;
+}
+.contact form legend {
+    padding-bottom: 10px;
 }
 @media(min-width: 600px) {
     h1 {

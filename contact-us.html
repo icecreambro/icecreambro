@@ -52,13 +52,24 @@
             <div class="col-sm-4">
                 <a href="mailto:info@icecreambro.com"> <img src="img/email.png" alt="Email Link"></a>
             </div>
-            <form id="email-signup">
-                <header>Want some sweet deals? Join our email list!!</header>
-                <input type="text" placeholder="Name">
-                <input type="text" placeholder="Email">
-                <input type="submit">
-            </form>
         </div>
+
+        <form class="form-horizontal">
+            <fieldset>
+                <legend>Want some sweet deals? Join our email list!!</legend>
+                <div class="form-group">
+                    <div class="col-xs-5">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                    </div>
+                    <div class="col-xs-5">
+                        <input type="text" class="form-control" id="number" name="email" placeholder="Email">
+                    </div>
+                    <div class="col-xs-2 submit-buttons">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
     </div>
 </body>
 
