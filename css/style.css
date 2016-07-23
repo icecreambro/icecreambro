@@ -64,6 +64,15 @@ h2 {
 .contact form .form-group {
     margin: 0 auto 15px;
 }
+.referral {
+    display: none !important;
+}
+.juicer {
+    display: none !important;
+}
+.j-stacker-wrapper {
+    margin-top: 25px;
+}
 @media(min-width: 600px) {
     h1 {
         font-size: 85px;
