@@ -7,11 +7,10 @@
     <meta name="description" content="Your On-Demand, On-Campus Ice Cream Delivery">
 
 
-    <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="css/full.css">
 
-    <script src="js/functions.js"></script>
     <script src="//use.edgefonts.net/advent-pro.js"></script>
     <script src="jquery-1.9.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -33,7 +32,7 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="order2-us.html">Home</a></li>
+                    <li><a href="order2.html">Home</a></li>
                     <li><a href="about-us.html">Our Story</a></li>
                     <li><a href="contact-us.html">Contact Us</a></li>
                     <li><a href="newsroom.html">Newsroom</a></li>
@@ -210,17 +209,20 @@
         }
 
         $('input[type=text]').change(validateForm);
-        
+
         function validateForm() {
-            var name = $('#name').val(), num = $('#number').val(), loc = $('#location').val(), time = $('#time').val();
+            var name = $('#name').val(),
+                num = $('#number').val(),
+                loc = $('#location').val(),
+                time = $('#time').val();
             var flavors = $(':checkbox:checked').first().val();
-            if(name != '' && num != '' && loc != '' && time != '' && flavors == 'on'){
-               $('.submit-buttons button').removeClass('disabled');
+            if (name != '' && num != '' && loc != '' && time != '' && flavors == 'on') {
+                $('.submit-buttons button').removeClass('disabled');
             } else {
                 $('.submit-buttons button').addClass('disabled');
-            } 
+            }
         }
-        
+
         $('body').scrollspy({
             target: ".smooth"
         });
@@ -240,13 +242,13 @@
                 // Using jQuery's animate() method to add smooth page scroll
                 // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
                 $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function() {
+                    scrollTop: $(hash).offset().top
+                }, 800, function() {
 
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    }
-                )};
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                })
+            };
         });
 
     </script>
