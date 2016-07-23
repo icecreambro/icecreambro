@@ -16,7 +16,7 @@ body {
     bottom: -10em;
     color: white;
 }
-#landing-page {
+.landing-page {
     top: 0;
     height: 100vh;
     background: url('/img/testBackgroundMobile.jpg') no-repeat center center fixed;
@@ -25,7 +25,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
-#landing-page h1 {
+.landing-page h1 {
     color: white;
     top: 0;
     text-align: center;
@@ -33,7 +33,7 @@ body {
     margin-top: 0px;
     padding-top: 15px;
 }
-#landing-page h2 {
+.landing-page h2 {
     color: white;
     text-align: center;
     font-size: 2em;
@@ -324,6 +324,10 @@ h3 {
         border-top: 2px solid;
         border-color: black;
     }
+    #links img {
+        height: 64px;
+        width: 64px;
+    }
     #navbar table a {
         display: block;
         color: black;
@@ -332,7 +336,7 @@ h3 {
         font-size: 1.5em;
     }
     #landing-page {
-        background-image: url('/img/testBackground.gif');
+        background-image: url('/img/background.jpg');
     }
     #landing-page h1 {
         font-size: 8em;

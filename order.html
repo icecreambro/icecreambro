@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Ice Cream, Delivery, UNL, College">
+    <meta name="description" content="Your On-Demand, On-Campus Ice Cream Delivery">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/functions.js"></script>
+    <script src="//use.edgefonts.net/advent-pro.js"></script>
+    <!--    <script src="js/smoothScroll.js"></script>-->
+
+    <!-- Make sure icon is actual logo -->
+    <link rel="icon" href="img/Ice%20Cream%20Bro.png">
+    <title>Ice Cream Bro</title>
+</head>
+
+<body id="home">
+    <div id="confirmation-modal" class="modalDialog">
+        <div class="input-area">
+            <h2>Let's check the order real quick!!</h2>
+            <p>Just a second...</p>
+            <div class="row">
+                <input type="text" id="promoCode" value='' placeholder="Promo Code?">
+                <button class="btn" name="apply" id="apply" onclick="createOrder()">Apply</button>
+                <label for="apply" id="invalid-promo" style="display:none">Invalid Code. Try again!!</label>
+            </div>
+            <div id="confirm-buttons">
+                <button class="btn" onclick="placeOrder(createOrder())">Submit</button>
+                <button class="btn"><a href="#order-form">Edit</a></button>
+            </div>
+        </div>
+    </div>
+
+    <form action="orders.php" method="post">
+        <input type=hidden id="order-sending-form" name="order">
+        <button type="submit" id="order-sending-submit" style="display:none"></button>
+    </form>
+
+
+    <div id="navbar" class="hidden-mobile">
+        <table>
+            <tr height="18"></tr>
+            <tr id="links">
+                <td width="17%"><a href="about-us.html">Our Story</a></td>
+                <td width="17%"><a href="contact-us.html">Contact Us</a></td>
+                <td width="27%"><img src="img/bowl.png"></td>
+                <td width="17%"><a href="newsroom.html">Newsroom</a></td>
+                <td width="17%"><a href="store.icecreambro.com">Swag Shop</a></td>
+            </tr>
+            <tr height="18"></tr>
+        </table>
+    </div>
+    <div class="home-page" id="landing-page">
+        <h1>Ice Cream Bro</h1>
+        <h2>You want ice cream. <br><br> We bring it to you.</h2>
+    </div>
+
+    <div class="area">
+        <form id="order-form">
+            <div class="input-area">
+                <header>Info.</header>
+                <div class="col2">
+                    <label for="fistname">Name.</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="col2">
+                    <label for="phone">Phone.</label>
+                    <input type="text" name="phone">
+                </div>
+                <div class="col2">
+                    <label for="location">Building &amp; Room.</label>
+                    <input type="text" name="location">
+                </div>
+                <div class="col2">
+                    <label for="time">Delivery Time.</label>
+                    <input type="text" name="time">
+                </div>
+            </div>
+            <div class="check-area">
+                <header>Flavors.</header>
+                <div class="row">
+                    <div class="col2">
+                        <input type="checkbox" name="CD" id="CD" onclick="viewQuantity(numCD)">
+                        <label for="CD">Super Chunky Cookie Dough</label>
+                        <div id="numCD" style="display: none" class="quantity-selector">
+                            <p>x</p>
+                            <select onchange="subtotal(numCD)">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <p>= $4</p>
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <input type="checkbox" name="MC" id="MC" onclick="viewQuantity(numMC)">
+                        <label for="MC">Mint Chocolate Chip</label>
+                        <div id="numMC" style="display: none" class="quantity-selector">
+                            <p>x</p>
+                            <select onchange="subtotal(numMC)">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <p>= $4</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col2">
+                        <input type="checkbox" name="CC" id="CC" onclick="viewQuantity(numCC)">
+                        <label for="CC">Cookies &amp; Creme</label>
+                        <div id="numCC" style="display: none" class="quantity-selector">
+                            <p>x</p>
+                            <select onchange="subtotal(numCC)">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <p>= $4</p>
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <input type="checkbox" name="PBP" id="PBP" onclick="viewQuantity(numPBP)">
+                        <label for="PBP">Peanut Butter Party</label>
+                        <div id="numPBP" style="display: none" class="quantity-selector">
+                            <p>x</p>
+                            <select onchange="subtotal(numPBP)">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <p>= $4</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col2">
+                        <input type="checkbox" name="SFB" id="SFB" onclick="viewQuantity(numSFB)">
+                        <label for="SFB">Super Fudge Brownie</label>
+                        <div id="numSFB" style="display: none" class="quantity-selector">
+                            <p>x</p>
+                            <select onchange="subtotal(numSFB)">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <p>= $4</p>
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <input type="checkbox" name="SCC" id="SCC" onclick="viewQuantity(numSCC)">
+                        <label for="SCC">Salted Caramel Craze</label>
+                        <div id="numSCC" style="display: none" class="quantity-selector">
+                            <p>x</p>
+                            <select onchange="subtotal(numSCC)">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <p>= $4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="form-buttons" class="row">
+                <a href="#confirmation-modal">
+                    <button type="button" id="confirm" class="btn" onclick="displayOrder(createOrder())">Place Order</button>
+                </a>
+                <button type="reset" id="cancel" class="btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+.full-page {
+    height: 92vh;
+}
+.landing-page div {
+    text-align: center;
+}
+.landing-page .row {
+    padding-top: 10vh;
+}
+.landing-page h1 {
+    font-size: 43px;
+}
+.landing-page h2 {
+    font-size: 30px;
+}
+.order-page {
+    height: 78vh;
+}
+.flavors .col-xs-8,
+.flavors .col-xs-4 {
+    padding-bottom: 10px;
+}
+.flavors select {
+    display: none;
+}
+.submit-buttons {
+    text-align: center;
+}
+@media(min-width: 600px) {
+    .landing-page h1 {
+        font-size: 85px;
+    }
+    .landing-page h2 {
+        font-size: 50px;
+    }
+}
+@media (max-width: 599px) and (min-width: 440px) {
+    .landing-page h1 {
+        font-size: 60px;
+    }
+}
