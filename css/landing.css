@@ -21,12 +21,12 @@ html, body{
     text-align: center;
 }
 img{
-    margin-top:10%;
+    margin-top:10vh;
     width:600px;
     height:auto;
 }
 p{
-    font-size: 36px;
+    font-size: 30px;
 }
 #longer-paragraph{
     width:80%;
