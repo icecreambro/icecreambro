@@ -33,6 +33,9 @@ p{
     margin:auto;
     text-decoration: none;
 }
+.navbar-collapse {
+    text-align: left;
+}
 
 @media (max-width: 1200px) {
       img{

@@ -51,18 +51,30 @@ h2 {
 .contact {
     text-align: center;
 }
-.contact .row {
-    padding: 50px 0;
+.contact .social {
+    padding: 50px 0 25px;
+}
+.contact .social div {
+    padding-bottom: 20px;
 }
 .contact img {
-    transform: scale(0.5);
-    transform-origin: 25%;
+    transform: scale(0.75);
+    transform-origin: 35%;
 }
 .contact form legend {
     padding-bottom: 10px;
 }
 .contact form .form-group {
     margin: 0 auto 15px;
+}
+.referral {
+    display: none !important;
+}
+.juicer {
+    display: none !important;
+}
+.j-stacker-wrapper {
+    margin-top: 25px;
 }
 @media(min-width: 600px) {
     h1 {
@@ -78,9 +90,5 @@ h2 {
 @media (max-width: 599px) and (min-width: 440px) {
     h1 {
         font-size: 60px;
-    }
-    .contact img {
-        transform: scale(0.75);
-        transform-origin: left;
     }
 }
