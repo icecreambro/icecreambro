@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Ice Cream, Delivery, UNL, College">
     <meta name="description" content="Your On-Demand, On-Campus Ice Cream Delivery">
-    <link rel="stylesheet" href="css/landing.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/full.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <script src="//use.edgefonts.net/advent-pro.js"></script>
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -30,20 +34,12 @@
 
     </script>
 
-
-    <!-- Make sure icon is actual logo -->
     <link rel="icon" href="img/bowl.png">
-    <title>Ice Cream Bro</title>
-    <style>
-        @font-face {
-            font-family: Gotham;
-            src: url(fonts/GothamRounded-Book.otf);
-        }
-
-    </style>
+    <title>Contact Us</title>
 </head>
 
-<body id="background" style="background: url('http://7428.net/wp-content/uploads/2015/01/Waves-Geometric-Background-Design-Vector-.jpg');">
+<body class="full">
+
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -66,10 +62,28 @@
             </div>
         </div>
     </nav>
-    <img src="img/icb.png" />
-    <div class="row">
-        <p id="thanks-visiting">THANKS FOR VISITING OUR SITE!</p>
-        <p id="longer-paragraph">WE CAN’T WAIT TO DELIVER ICE CREAM THIS FALL. MAKE SURE TO CHECK OUT <a href="https://www.twitter.com/icecreambrounl">@ICECREAMBROUNL</a> ON TWITTER FOR THE SCOOP</p>
+
+    <div class="container complete">
+        <h1>You did it!!!</h1>
+        <h2>Thanks for placing your order. We'll be over as soon as we can.</h2>
+        <h3>While you're waiting, make sure you follow us on  <a href="https://twitter.com/icecreambrounl">Twitter</a> and <a href="https://instagram.com/icecreambrounl/">Instagram</a>!!</h3>
+
+        <form class="form-horizontal row">
+            <fieldset class="col-xs-10 col-xs-offset-1 email">
+                <legend>Want some sweet deals? Join our email list!!</legend>
+                <div class="form-group">
+                    <div class="col-sm-5 col-xs-4">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                    </div>
+                    <div class="col-sm-5 col-xs-4">
+                        <input type="text" class="form-control" id="number" name="email" placeholder="Email">
+                    </div>
+                    <div class="col-xs-2 submit-buttons">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
     </div>
 </body>
 
