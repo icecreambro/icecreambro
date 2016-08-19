@@ -30,7 +30,7 @@ $('.promo .btn').click(function () {
 })
 
 $(function () {
-    $("#order .submit-buttons button").click(function () {
+    $("#order form").submit(function () {
         var name = $("#name").val();
         var number = $("#number").val();
         var location = $("#location").val();
