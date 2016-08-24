@@ -1,5 +1,5 @@
 function showQuan(flav) {
-    $("select[name=" + flav + "-quantity]").toggle();
+    $("select[name=" + flav + "-quantity]").toggle().removeAttr('disabled');
     validateForm()
 }
 
@@ -52,6 +52,8 @@ $(function () {
             flavors: flavors
         });
     });
+    var id = Math.floor(1000 + Math.random() * 9000);
+    $('input[name="_subject"]').val('Order ID: ' + id);
 });
 
 
