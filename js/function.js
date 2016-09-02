@@ -18,8 +18,8 @@ function validateForm() {
     }
 }
 
-$('.promo .btn').click(function () {
-    var promos = ['ICB25']
+function validateCode() {
+    var promos = ['TWIT25']
     var input = $('.promo input').val().toUpperCase();
     var valid = $.inArray(input, promos) > -1;
     if (valid) {
@@ -27,7 +27,7 @@ $('.promo .btn').click(function () {
     } else {
         $('.promo .btn').removeClass().addClass('btn btn-danger').html('Invalid Code.');
     }
-})
+}
 
 $(function () {
     $("#order form").submit(function () {
