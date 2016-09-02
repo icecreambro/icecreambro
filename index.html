@@ -17,6 +17,7 @@
     <script src="js/function.js"></script>
 
     <!-- Begin Google Analytics -->
+<!--
     <script>
         (function(i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -34,12 +35,14 @@
         ga('send', 'pageview');
 
     </script>
+-->
 
     <link rel="icon" href="img/bowl.png">
     <title>Ice Cream Bro</title>
 </head>
 
 <body class="full" data-spy="scroll" data-target=".order">
+<!--
     <script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -61,6 +64,7 @@
         }(document, 'script', 'facebook-jssdk'));
 
     </script>
+-->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -283,16 +287,14 @@
                     </fieldset>
                 </div>
 
-<!--
                 <div class="row promo">
                     <div class="col-sm-4 col-xs-6">
                         <input type="text" class="form-control" id="time" name="promo" placeholder="Promo Code">
                     </div>
                     <div class="col-sm-2 col-xs-4">
-                        <a class="btn btn-default">Apply Code</a>
+                        <a class="btn btn-default" onclick="validateCode()">Apply Code</a>
                     </div>
                 </div>
--->
 
                 <div class="form-group">
                     <div class="col-xs-12 submit-buttons">
