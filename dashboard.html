@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Ice Cream, Delivery, UNL, College">
+    <meta name="description" content="Your On-Demand, On-Campus Ice Cream Delivery">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/full.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="//use.edgefonts.net/advent-pro.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/function.js"></script>
+
+    <!-- Begin Google Analytics -->
+<!--
+>>>>>>> cba14de030c3894bbd550dfc3d0098dd83d29299
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-75421301-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+-->
+
+    <link rel="icon" href="img/bowl.png">
+    <title>Ice Cream Bro</title>
+</head>
+
+<body class="full" data-spy="scroll" data-target=".order">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Ice Cream Bro</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="social.html">Social Scoop</a></li>
+                    <li><a href="http://store.icecreambro.com">Swag Shop</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="landing-page full-page">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <h1>Ice Cream Bro</h1>
+                    <h2>You want ice cream. <br> We bring it to you. <br> Click below to get started.</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <a href="#order" class="btn btn-primary btn-lg smooth">Order Now!!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="javascript:makeCorsRequest()">Location</a>
+    <script>
+        // Enable smooth scrolling
+
+        $('body').scrollspy({
+            target: ".smooth"
+        });
+
+        // Add smooth scrolling to smooth class
+        $(".smooth").on('click', function(event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash (#)
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function() {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                })
+            };
+        });
+        
+        function location() {
+            $.ajax( {
+                url: 'https://connect.squareup.com/v2/0ZV4CY2PGCPX2/location',
+                type: 'GET',
+                beforeSend : function( xhr ) {
+                    xhr.setRequestHeader( "Authorization", "BEARER " + 'sq0atp-K4-4TIU5WTHbVAi39c98gA' );
+//                    xhr.setRequestHeader( "Content-Type", "application/json");
+//                    xhr.setRequestHeader("Accept", "application/json");
+                    xhr.setRequestHeader("jsonp", "jsoncallback");
+                    xhr.setRequestHeader("dataType", "jsonp");
+                },
+                success: function( response ) {
+                    var id_enum = {
+                        sccd: '76fcda92-7f9a-4c3b-aede-e2cfd597a7d1',
+                        mc: '698406f3-ca5e-4d7f-a0d3-817b619b25ab',
+                        sfb: '4d3dde4a-e199-4acd-8c06-cd9455b3cb98',
+                        scc: 'FD3036BA-9590-43F0-B5AD-BE95663B0F51',
+                        cc: 'cd69dd3b-caa7-4860-ab33-1ae817ba4c6d',
+                        pbp: '7ccb34f2-1b7c-45af-bdac-fd2171324776',
+                        cashew_scc: '7d670508-53d6-4eba-8877-6c2d7a29a70c'
+                    }
+                    // for(var r in response) {
+                    //     var id = response[r].variation_id, quan = response[r].quantity_on_hand;
+                    //     console.log(id);
+                    //     console.log(quan);
+                    //     for(var e in id_enum) {
+                    //         if(id_enum[e] == id && quan < 1) {
+                    //             // Finish this
+                    //             $('[name=' +id_enum[e]+ ']').remove();
+                    //             console.log($('[name=' +id_enum[e]+ ']'));
+                    //         }
+                    //     }
+                    // }
+                    console.log(response);
+                }
+            } );
+
+            return;
+        }
+        
+        // Create the XHR object.
+        function createCORSRequest(method, url) {
+          var xhr = new XMLHttpRequest();
+          if ("withCredentials" in xhr) {
+            // XHR for Chrome/Firefox/Opera/Safari.
+            xhr.open(method, url, true);
+          } else if (typeof XDomainRequest != "undefined") {
+            // XDomainRequest for IE.
+            xhr = new XDomainRequest();
+            xhr.open(method, url);
+          } else {
+            // CORS not supported.
+            xhr = null;
+          }
+          return xhr;
+        }
+
+        // Helper method to parse the title tag from the response.
+        function getTitle(text) {
+          return text.match('<title>(.*)?</title>')[1];
+        }
+
+        // Make the actual CORS request.
+        function makeCorsRequest() {
+          // This is a sample server that supports CORS.
+          var url = 'https://connect.squareup.com/v2/0ZV4CY2PGCPX2/location';
+          var header = 'Authorization: Bearer sq0atp-K4-4TIU5WTHbVAi39c98gA';
+
+          var xhr = createCORSRequest('GET', url);
+          if (!xhr) {
+            alert('CORS not supported');
+            return;
+          }
+
+          // Response handlers.
+          xhr.onload = function() {
+            var text = xhr.responseText;
+            var title = getTitle(text);
+            alert('Response from CORS request to ' + url + ': ' + title);
+          };
+
+          xhr.onerror = function() {
+            alert('Woops, there was an error making the request.');
+          };
+
+          xhr.send();
+        }
+
+    </script>
+</body>
+
+</html>
