@@ -291,39 +291,43 @@
             };
         });
         
-        $.ajax( {
-            url: 'https://connect.squareup.com/v1/0ZV4CY2PGCPX2/location',
-            type: 'GET',
-            beforeSend : function( xhr ) {
-                xhr.setRequestHeader( "Authorization", "BEARER " + 'sq0atp-K4-4TIU5WTHbVAi39c98gA' );
-                xhr.setRequestHeader( "Content-Type", "application/json");
-                xhr.setRequestHeader("Accept", "application/json");
-            },
-            success: function( response ) {
-                var id_enum = {
-                    sccd: '76fcda92-7f9a-4c3b-aede-e2cfd597a7d1',
-                    mc: '698406f3-ca5e-4d7f-a0d3-817b619b25ab',
-                    sfb: '4d3dde4a-e199-4acd-8c06-cd9455b3cb98',
-                    scc: 'FD3036BA-9590-43F0-B5AD-BE95663B0F51',
-                    cc: 'cd69dd3b-caa7-4860-ab33-1ae817ba4c6d',
-                    pbp: '7ccb34f2-1b7c-45af-bdac-fd2171324776',
-                    cashew_scc: '7d670508-53d6-4eba-8877-6c2d7a29a70c'
+        function location() {
+            $.ajax( {
+                url: 'https://connect.squareup.com/v2/0ZV4CY2PGCPX2/location',
+                type: 'GET',
+                beforeSend : function( xhr ) {
+                    xhr.setRequestHeader( "Authorization", "BEARER " + 'sq0atp-K4-4TIU5WTHbVAi39c98gA' );
+//                    xhr.setRequestHeader( "Content-Type", "application/json");
+//                    xhr.setRequestHeader("Accept", "application/json");
+                },
+                success: function( response ) {
+                    var id_enum = {
+                        sccd: '76fcda92-7f9a-4c3b-aede-e2cfd597a7d1',
+                        mc: '698406f3-ca5e-4d7f-a0d3-817b619b25ab',
+                        sfb: '4d3dde4a-e199-4acd-8c06-cd9455b3cb98',
+                        scc: 'FD3036BA-9590-43F0-B5AD-BE95663B0F51',
+                        cc: 'cd69dd3b-caa7-4860-ab33-1ae817ba4c6d',
+                        pbp: '7ccb34f2-1b7c-45af-bdac-fd2171324776',
+                        cashew_scc: '7d670508-53d6-4eba-8877-6c2d7a29a70c'
+                    }
+                    // for(var r in response) {
+                    //     var id = response[r].variation_id, quan = response[r].quantity_on_hand;
+                    //     console.log(id);
+                    //     console.log(quan);
+                    //     for(var e in id_enum) {
+                    //         if(id_enum[e] == id && quan < 1) {
+                    //             // Finish this
+                    //             $('[name=' +id_enum[e]+ ']').remove();
+                    //             console.log($('[name=' +id_enum[e]+ ']'));
+                    //         }
+                    //     }
+                    // }
+                    console.log(response);
                 }
-                // for(var r in response) {
-                //     var id = response[r].variation_id, quan = response[r].quantity_on_hand;
-                //     console.log(id);
-                //     console.log(quan);
-                //     for(var e in id_enum) {
-                //         if(id_enum[e] == id && quan < 1) {
-                //             // Finish this
-                //             $('[name=' +id_enum[e]+ ']').remove();
-                //             console.log($('[name=' +id_enum[e]+ ']'));
-                //         }
-                //     }
-                // }
-                console.log(response);
-            }
-        } );
+            } );
+
+            return;
+        }
 
     </script>
 </body>
