@@ -79,7 +79,7 @@
             </div>
         </div>
         <div id="order">
-            <form action="https://formspree.io/mvobzpbx" method="POST" class="form-horizontal">
+            <form action="https://formspree.io/mvobzpbx" method="POST" class="form-horizontal" id="order-form">
                 <fieldset>
                     <legend>Info</legend>
                     <div class="form-group">
@@ -291,11 +291,48 @@
         });
     })
     
-    function CheckFieldset(e) {
-        if($(e).children().length == 1){
-            $(e).remove();
+    function CheckFieldset(e) { if($(e).children().length == 1){ $(e).remove(); } }
+    
+    $('button').click(function() {
+        var o = {};
+        var q = "";
+        $('.flavors input:checked').each(function(){
+            q = $(this).attr('name') + '-quantity';
+            q = $('[name=' + q + ']').val();
+            o[$(this).attr('name')] = q;
+        })
+        var a = {
+                    sccd: '76fcda92-7f9a-4c3b-aede-e2cfd597a7d1',
+                    mcc: '698406f3-ca5e-4d7f-a0d3-817b619b25ab',
+                    sfb: '4d3dde4a-e199-4acd-8c06-cd9455b3cb98',
+                    scc: 'FD3036BA-9590-43F0-B5AD-BE95663B0F51',
+                    cc: 'cd69dd3b-caa7-4860-ab33-1ae817ba4c6d',
+                    pbp: '7ccb34f2-1b7c-45af-bdac-fd2171324776',
+                    bj: '7d670508-53d6-4eba-8877-6c2d7a29a70c'
+                }
+        for(var f in o){
+            for(var i in a){
+                if(f == i){
+                    console.log(a[i]);
+                    var data = {
+                                "quantity_delta": -1 * o[f],
+                                "adjustment_type": "SALE"
+                            }
+                    $.ajax( {
+                        url: 'https://connect.squareup.com/v1/0ZV4CY2PGCPX2/inventory/'+a[i],
+                        type: 'POST',
+                        processData: false,
+                        data: JSON.stringify(data),
+                        beforeSend : function( xhr ) {
+                            xhr.setRequestHeader( "Authorization", "BEARER " + 'sq0atp-K4-4TIU5WTHbVAi39c98gA' );
+                        },
+                        success: function( R ) {
+                        }
+                    })
+                }
+            }
         }
-    }
+    })
 
 </script>
 </body>
