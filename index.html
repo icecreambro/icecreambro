@@ -82,20 +82,20 @@
             <form action="https://formspree.io/mvobzpbx" method="POST" class="form-horizontal" id="order-form">
                 <fieldset>
                     <legend>Info</legend>
-                    <div class="form-group">
+                    <div class="form-group row">
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required onchange="validateForm()">
                         </div>
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" id="number" name="number" placeholder="Phone Number" required>
+                            <input type="text" class="form-control" id="number" name="number" placeholder="Phone Number" required onchange="validateForm()">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group row">
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" id="location" name="location" placeholder="Building & Room" required>
+                            <input type="text" class="form-control" id="location" name="location" placeholder="Building & Room" required onchange="validateForm()">
                         </div>
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" id="time" name="time" placeholder="Delivery Time" data-toggle="popover" data-placement="bottom" data-content="We deliver Thursday from 8PM-2AM." data-original-title="" title="" required>
+                            <input type="text" class="form-control" id="time" name="time" placeholder="Delivery Time" data-toggle="popover" data-placement="bottom" data-content="We deliver Thursday from 8PM-2AM." data-original-title="" title="" required onchange="validateForm()">
                         </div>
                     </div>
                 </fieldset>
@@ -236,7 +236,7 @@
 
                  <div class="row promo">
                     <div class="col-sm-4 col-xs-6">
-                        <input type="text" class="form-control" id="time" name="promo" placeholder="Promo Code">
+                        <input type="text" class="form-control" id="promo" name="promo" placeholder="Promo Code">
                     </div>
                     <div class="col-sm-2 col-xs-4">
                         <a class="btn btn-default" onclick="validateCode()">Apply Code</a>
@@ -258,6 +258,7 @@
     // Add smooth scrolling to smooth class
     $(".smooth").on('click', function(e) { if (this.hash !== "") { e.preventDefault(); var hash = this.hash; $('html, body').animate({ scrollTop: $(hash).offset().top }, 800, function() { window.location.hash = hash; }) }; });
 
+    // Call Square, check inventory, remove element
     $(document).ready(function(){
         $.ajax( {
             url: 'https://connect.squareup.com/v1/0ZV4CY2PGCPX2/inventory',
@@ -293,6 +294,7 @@
     
     function CheckFieldset(e) { if($(e).children().length == 1){ $(e).remove(); } }
     
+    // Take order, remove from inventory
     $('#order-form').submit(function() {
         var o = {};
         var q = "";

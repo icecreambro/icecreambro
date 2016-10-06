@@ -9,8 +9,9 @@ function validateForm() {
     var name = $('#name').val(),
         num = $('#number').val(),
         loc = $('#location').val(),
-        time = $('#time').val();
-    var flavors = $(':checkbox:checked').first().val();
+        time = $('#time').val(),
+        flavors = $(':checkbox:checked').first().val();
+    console.log(name, num, loc, time, flavors);
     if (name != '' && num != '' && loc != '' && time != '' && flavors == 'on') {
         $('.submit-buttons button').removeClass('disabled');
     } else {
