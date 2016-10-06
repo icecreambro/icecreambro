@@ -49,14 +49,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Ice Cream Bro</a>
+                <a class="navbar-brand" href="/">Ice Cream Bro</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="social.html">Social Scoop</a></li>
                     <li><a href="http://store.icecreambro.com">Swag Shop</a></li>
                 </ul>
             </div>
@@ -77,153 +75,148 @@
             </div>
         </div>
         <div id="order">
-            <form action="https://formspree.io/mvobzpbx" method="POST" class="form-horizontal">
+            <form action="https://formspree.io/mvobzpbx" method="POST" class="form-horizontal" id="order-form">
                 <fieldset>
-                    <legend>Info.</legend>
-                    <div class="form-group">
+                    <legend>Info</legend>
+                    <div class="form-group row">
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required onchange="validateForm()">
                         </div>
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" id="number" name="number" placeholder="Phone Number" required>
+                            <input type="text" class="form-control" id="number" name="number" placeholder="Phone Number" required onchange="validateForm()">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group row">
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" id="location" name="location" placeholder="Building & Room" required>
+                            <input type="text" class="form-control" id="location" name="location" placeholder="Building & Room" required onchange="validateForm()">
                         </div>
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" id="time" name="time" placeholder="Delivery Time" data-toggle="popover" data-placement="bottom" data-content="We deliver Thursday from 8PM-2AM." data-original-title="" title="" required>
+                            <input type="text" class="form-control" id="time" name="time" placeholder="Delivery Time" data-toggle="popover" data-placement="bottom" data-content="We deliver Thursday from 8PM-2AM." data-original-title="" title="" required onchange="validateForm()">
                         </div>
                     </div>
                 </fieldset>
                 <div class="form-group row flavors">
-                    <fieldset>
-                        <legend>Blue Bunny Pints</legend>
-                        <div class="col-sm-6">
-                            <div class="col-xs-8">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="sccd" onclick="showQuan('sccd')"> Super Chunky Cookie Dough
-                                    </label>
-                                </div>
+                    <fieldset id="regular">
+                        <legend>Regular Pints - $4</legend>
+                        <div class="col-xs-4">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="sccd" onclick="showQuan('sccd')"> Super Chunky Cookie Dough
+                                </label>
                             </div>
-                            <div class="col-xs-4">
-                                <select class="form-control" name="sccd-quantity" disabled>
-                                    <optgroup label="Quantity">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </optgroup>
-                                </select>
-                            </div>
-<!--                             <div class="col-xs-8">
-                               <div class="checkbox">
-                                   <label>
-                                       <input type="checkbox" name="mcc" onclick="showQuan('mcc')"> Mint Chocolate Chip
-                                   </label>
-                               </div>
-                            </div>
-                            <div class="col-xs-4">
-                               <select class="form-control" name="mcc-quantity" disabled>
-                                   <optgroup label="Quantity">
-                                       <option>1</option>
-                                       <option>2</option>
-                                       <option>3</option>
-                                       <option>4</option>
-                                       <option>5</option>
-                                   </optgroup>
-                               </select>
-                            </div> -->
-<!--                             <div class="col-xs-8">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="sfb" onclick="showQuan('sfb')"> Super Fudge Brownie
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-xs-4">
-                                <select class="form-control" name="sfb-quantity" disabled>
-                                    <optgroup label="Quantity">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </optgroup>
-                                </select>
-                            </div> -->
                         </div>
-                        <div class="col-sm-6">
-<!--                             <div class="col-xs-8">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="scc" onclick="showQuan('scc')"> Salted Caramel Craze
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-xs-4">
-                                <select class="form-control" name="scc-quantity" disabled>
-                                    <optgroup label="Quantity">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </optgroup>
-                                </select>
-                            </div> -->
-<!--                             <div class="col-xs-8">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="cc" onclick="showQuan('cc')"> Cookies &amp; Creme
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-xs-4">
-                                <select class="form-control" name="cc-quantity" disabled>
-                                    <optgroup label="Quantity">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </optgroup>
-                                </select>
-                            </div> -->
-<!--                             <div class="col-xs-8">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="pbp" onclick="showQuan('pbp')"> Peanut Butter Party
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-xs-4">
-                                <select class="form-control" name="pbp-quantity" disabled>
-                                    <optgroup label="Quantity">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </optgroup>
-                                </select>
-                            </div> -->
+                        <div class="col-xs-2">
+                            <select class="form-control" name="sccd-quantity" disabled>
+                                <optgroup label="Quantity">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </optgroup>
+                            </select>
                         </div>
+                         <div class="col-xs-4">
+                           <div class="checkbox">
+                               <label>
+                                   <input type="checkbox" name="mcc" onclick="showQuan('mcc')"> Mint Chocolate Chip
+                               </label>
+                           </div>
+                        </div>
+                        <div class="col-xs-2">
+                           <select class="form-control" name="mcc-quantity" disabled>
+                               <optgroup label="Quantity">
+                                   <option>1</option>
+                                   <option>2</option>
+                                   <option>3</option>
+                                   <option>4</option>
+                                   <option>5</option>
+                               </optgroup>
+                           </select>
+                        </div> 
+                         <div class="col-xs-4">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="sfb" onclick="showQuan('sfb')"> Super Fudge Brownie
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <select class="form-control" name="sfb-quantity" disabled>
+                                <optgroup label="Quantity">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </optgroup>
+                            </select>
+                        </div> 
+                         <div class="col-xs-4">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="scc" onclick="showQuan('scc')"> Salted Caramel Craze
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <select class="form-control" name="scc-quantity" disabled>
+                                <optgroup label="Quantity">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </optgroup>
+                            </select>
+                        </div> 
+                         <div class="col-xs-4">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="cc" onclick="showQuan('cc')"> Cookies &amp; Creme
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <select class="form-control" name="cc-quantity" disabled>
+                                <optgroup label="Quantity">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </optgroup>
+                            </select>
+                        </div> 
+                         <div class="col-xs-4">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="pbp" onclick="showQuan('pbp')"> Peanut Butter Party
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <select class="form-control" name="pbp-quantity" disabled>
+                                <optgroup label="Quantity">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </optgroup>
+                            </select>
+                        </div> 
                     </fieldset>
-<!--                     <fieldset>
-                       <legend>Ben &amp; Jerry's Dairy Free - $6 </legend>
-                       <div class="col-sm-6">
-                           <div class="col-xs-8">
+                     <fieldset id="special">
+                       <legend>Speciality Pints - $6 </legend>
+                           <div class="col-xs-4">
                                <div class="checkbox">
                                    <label>
-                                       <input type="checkbox" name="bj" onclick="showQuan('bj')"> Coffee Caramel Fudge
+                                       <input type="checkbox" name="bj" onclick="showQuan('bj')"> Ben &amp; Jerry's Coffee Caramel Fudge (Dairy Free)
                                    </label>
                                </div>
                            </div>
-                           <div class="col-xs-4">
+                           <div class="col-xs-2">
                                <select class="form-control" name="bj-quantity" disabled>
                                    <optgroup label="Quantity">
                                        <option>1</option>
@@ -234,18 +227,17 @@
                                    </optgroup>
                                </select>
                            </div>
-                       </div>
-                    </fieldset> -->
+                    </fieldset> 
                 </div>
 
-<!--                 <div class="row promo">
+                 <div class="row promo">
                     <div class="col-sm-4 col-xs-6">
-                        <input type="text" class="form-control" id="time" name="promo" placeholder="Promo Code">
+                        <input type="text" class="form-control" id="promo" name="promo" placeholder="Promo Code">
                     </div>
                     <div class="col-sm-2 col-xs-4">
                         <a class="btn btn-default" onclick="validateCode()">Apply Code</a>
                     </div>
-                </div> -->
+                </div> 
 
                 <div class="form-group">
                     <div class="col-xs-12 submit-buttons">
@@ -257,76 +249,90 @@
             </form>
         </div>
     </div>
-    <script>
-        // Enable smooth scrolling
 
-        $('body').scrollspy({
-            target: ".smooth"
-        });
+<script>
+    // Add smooth scrolling to smooth class
+    $(".smooth").on('click', function(e) { if (this.hash !== "") { e.preventDefault(); var hash = this.hash; $('html, body').animate({ scrollTop: $(hash).offset().top }, 800, function() { window.location.hash = hash; }) }; });
 
-        // Add smooth scrolling to smooth class
-        $(".smooth").on('click', function(event) {
-
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-
-                // Prevent default anchor click behavior
-                event.preventDefault();
-
-                // Store hash (#)
-                var hash = this.hash;
-
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 800, function() {
-
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                })
-            };
-        });
-        
-        function location() {
-            $.ajax( {
-                url: 'https://connect.squareup.com/v2/0ZV4CY2PGCPX2/location',
-                type: 'GET',
-                beforeSend : function( xhr ) {
-                    xhr.setRequestHeader( "Authorization", "BEARER " + 'sq0atp-K4-4TIU5WTHbVAi39c98gA' );
-//                    xhr.setRequestHeader( "Content-Type", "application/json");
-//                    xhr.setRequestHeader("Accept", "application/json");
-                },
-                success: function( response ) {
-                    var id_enum = {
-                        sccd: '76fcda92-7f9a-4c3b-aede-e2cfd597a7d1',
-                        mc: '698406f3-ca5e-4d7f-a0d3-817b619b25ab',
-                        sfb: '4d3dde4a-e199-4acd-8c06-cd9455b3cb98',
-                        scc: 'FD3036BA-9590-43F0-B5AD-BE95663B0F51',
-                        cc: 'cd69dd3b-caa7-4860-ab33-1ae817ba4c6d',
-                        pbp: '7ccb34f2-1b7c-45af-bdac-fd2171324776',
-                        cashew_scc: '7d670508-53d6-4eba-8877-6c2d7a29a70c'
-                    }
-                    // for(var r in response) {
-                    //     var id = response[r].variation_id, quan = response[r].quantity_on_hand;
-                    //     console.log(id);
-                    //     console.log(quan);
-                    //     for(var e in id_enum) {
-                    //         if(id_enum[e] == id && quan < 1) {
-                    //             // Finish this
-                    //             $('[name=' +id_enum[e]+ ']').remove();
-                    //             console.log($('[name=' +id_enum[e]+ ']'));
-                    //         }
-                    //     }
-                    // }
-                    console.log(response);
+    // Call Square, check inventory, remove element
+    $(document).ready(function(){
+        $.ajax( {
+            url: 'https://connect.squareup.com/v1/0ZV4CY2PGCPX2/inventory',
+            type: 'GET',
+            beforeSend : function( xhr ) {
+                xhr.setRequestHeader( "Authorization", "BEARER " + 'sq0atp-K4-4TIU5WTHbVAi39c98gA' );
+            },
+            success: function( R ) {
+                var a = {
+                    sccd: '76fcda92-7f9a-4c3b-aede-e2cfd597a7d1',
+                    mcc: '698406f3-ca5e-4d7f-a0d3-817b619b25ab',
+                    sfb: '4d3dde4a-e199-4acd-8c06-cd9455b3cb98',
+                    scc: 'FD3036BA-9590-43F0-B5AD-BE95663B0F51',
+                    cc: 'cd69dd3b-caa7-4860-ab33-1ae817ba4c6d',
+                    pbp: '7ccb34f2-1b7c-45af-bdac-fd2171324776',
+                    bj: '7d670508-53d6-4eba-8877-6c2d7a29a70c'
                 }
-            } );
-
-            return;
+                for(var r in R) {
+                    var i = R[r].variation_id, q = R[r].quantity_on_hand, b;
+                    for(var e in a) {
+                        if(a[e] == i && q < 1) {
+                            b = $('[name='+e+']').closest('.col-xs-4');
+                            $(b).next().remove();
+                            $(b).remove();
+                        }
+                    }
+                }
+                CheckFieldset($('#regular'));
+                CheckFieldset($('#special'));
+            }
+        });
+    })
+    
+    function CheckFieldset(e) { if($(e).children().length == 1){ $(e).remove(); } }
+    
+    // Take order, remove from inventory
+    $('#order-form').submit(function() {
+        var o = {};
+        var q = "";
+        $('.flavors input:checked').each(function(){
+            q = $(this).attr('name') + '-quantity';
+            q = $('[name=' + q + ']').val();
+            o[$(this).attr('name')] = q;
+        })
+        var a = {
+                    sccd: '76fcda92-7f9a-4c3b-aede-e2cfd597a7d1',
+                    mcc: '698406f3-ca5e-4d7f-a0d3-817b619b25ab',
+                    sfb: '4d3dde4a-e199-4acd-8c06-cd9455b3cb98',
+                    scc: 'FD3036BA-9590-43F0-B5AD-BE95663B0F51',
+                    cc: 'cd69dd3b-caa7-4860-ab33-1ae817ba4c6d',
+                    pbp: '7ccb34f2-1b7c-45af-bdac-fd2171324776',
+                    bj: '7d670508-53d6-4eba-8877-6c2d7a29a70c'
+                }
+        for(var f in o){
+            for(var i in a){
+                if(f == i){
+                    var data = {
+                                "quantity_delta": -1 * o[f],
+                                "adjustment_type": "SALE"
+                            }
+                    $.ajax( {
+                        url: 'https://connect.squareup.com/v1/0ZV4CY2PGCPX2/inventory/'+a[i],
+                        type: 'POST',
+                        contentType: 'application/json',
+                        processData: false,
+                        data: JSON.stringify(data),
+                        beforeSend : function( xhr ) {
+                            xhr.setRequestHeader( "Authorization", "BEARER " + 'sq0atp-K4-4TIU5WTHbVAi39c98gA' );
+                        },
+                        success: function( R ) {
+                        }
+                    })
+                }
+            }
         }
+    })
 
-    </script>
+</script>
 </body>
 
 </html>
