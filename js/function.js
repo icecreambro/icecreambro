@@ -11,7 +11,6 @@ function validateForm() {
         loc = $('#location').val(),
         time = $('#time').val(),
         flavors = $(':checkbox:checked').first().val();
-    console.log(name, num, loc, time, flavors);
     if (name != '' && num != '' && loc != '' && time != '' && flavors == 'on') {
         $('.submit-buttons button').removeClass('disabled');
     } else {
