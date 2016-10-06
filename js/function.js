@@ -30,28 +30,6 @@ function validateCode() {
 }
 
 $(function () {
-    $("#order form").submit(function () {
-        var name = $("#name").val();
-        var number = $("#number").val();
-        var location = $("#location").val();
-        var time = $("#time").val();
-        var flavors = {};
-        var quan = "";
-        $('.flavors input:checked').each(function(){
-            quan = $(this).attr('name') + '-quantity';
-            quan = $('[name=' + quan + ']').val();
-            flavors[$(this).attr('name')] = quan;
-        })
-        
-        var flavors = JSON.stringify(flavors);
-        $.post("https://script.google.com/macros/s/AKfycbzFxRmcBmuiDA9Pt8qzmM3c1wtp56_q3INEd3UGm5YsK_dNyL8R/exec", {
-            name: name,
-            number: number,
-            location: location,
-            time: time,
-            flavors: flavors
-        });
-    });
     var id = Math.floor(1000 + Math.random() * 9000);
     $('input[name="_subject"]').val('Order ID: ' + id);
 });

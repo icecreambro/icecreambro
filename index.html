@@ -293,7 +293,7 @@
     
     function CheckFieldset(e) { if($(e).children().length == 1){ $(e).remove(); } }
     
-    $('button').click(function() {
+    $('#order-form').submit(function() {
         var o = {};
         var q = "";
         $('.flavors input:checked').each(function(){
@@ -321,6 +321,7 @@
                     $.ajax( {
                         url: 'https://connect.squareup.com/v1/0ZV4CY2PGCPX2/inventory/'+a[i],
                         type: 'POST',
+                        contentType: 'application/json',
                         processData: false,
                         data: JSON.stringify(data),
                         beforeSend : function( xhr ) {
