@@ -301,14 +301,14 @@
                             }
                         }
                     }
-//                    CheckFieldset($('#regular'));
-//                    CheckFieldset($('#special'));
+                   CheckFieldset($('#regular'));
+                   CheckFieldset($('#special'));
                 }
             });
         })
 
         function CheckFieldset(e) {
-            if ($(e).children().length == 2) {
+            if ($(e).children().length == 1) {
                 $(e).remove();
             }
         }
