@@ -16,23 +16,22 @@
     <script src="js/function.js"></script>
 
     <!-- Begin Google Analytics -->
-    
-    <script>
-//        (function(i, s, o, g, r, a, m) {
-//            i['GoogleAnalyticsObject'] = r;
-//            i[r] = i[r] || function() {
-//                (i[r].q = i[r].q || []).push(arguments)
-//            }, i[r].l = 1 * new Date();
-//            a = s.createElement(o),
-//                m = s.getElementsByTagName(o)[0];
-//            a.async = 1;
-//            a.src = g;
-//            m.parentNode.insertBefore(a, m)
-//        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-//
-//        ga('create', 'UA-75421301-1', 'auto');
-//        ga('send', 'pageview');
 
+    <script>
+        //        (function(i, s, o, g, r, a, m) {
+        //            i['GoogleAnalyticsObject'] = r;
+        //            i[r] = i[r] || function() {
+        //                (i[r].q = i[r].q || []).push(arguments)
+        //            }, i[r].l = 1 * new Date();
+        //            a = s.createElement(o),
+        //                m = s.getElementsByTagName(o)[0];
+        //            a.async = 1;
+        //            a.src = g;
+        //            m.parentNode.insertBefore(a, m)
+        //        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        //
+        //        ga('create', 'UA-75421301-1', 'auto');
+        //        ga('send', 'pageview');
     </script>
 
 
@@ -71,7 +70,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-4">
-                    <a href="#order" class="btn btn-primary btn-lg smooth">Order Now!!</a>
+                    <button class="btn btn-primary btn-lg smooth" data-toggle="modal" data-target="#orderModal">Order Now!!</button>
                 </div>
             </div>
         </div>
@@ -256,6 +255,31 @@
             </form>
         </div>
     </div>
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Select Flavor</h4>
+                </div>
+                <div class="modal-body full">
+                    <div class="flavor-img row">
+                        <div class="col-xs-6"><img src="img/flavors/cc.png"> </div>
+                        <div class="col-xs-6"><img src="img/flavors/mcc.png"> </div>
+                        <div class="col-xs-6"><img src="img/flavors/pbp.png"> </div>
+                        <div class="col-xs-6"><img src="img/flavors/scc.png"> </div>
+                        <div class="col-xs-6"><img src="img/flavors/scc_dairy_free.png"> </div>
+                        <div class="col-xs-6"><img src="img/flavors/sccd.png"> </div>
+                        <div class="col-xs-6"><img src="img/flavors/sfb.png"> </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         // Add smooth scrolling to smooth class
         $(".smooth").on('click', function(e) {
@@ -300,8 +324,8 @@
                             }
                         }
                     }
-                   CheckFieldset($('#regular'));
-                   CheckFieldset($('#special'));
+                    CheckFieldset($('#regular'));
+                    CheckFieldset($('#special'));
                 }
             });
         })
@@ -350,6 +374,13 @@
                         })
                     }
                 }
+            }
+        })
+
+        $('#orderNow').click(function() {
+            var agent = window.navigator.userAgent;
+            if (/Android/i.test(agent) || /BlackBerry/i.test(agent) || /iPhone|iPad|iPod/i.test(agent) || /Opera Mini/i.test(agent) || /IEMobile/i.test(agent)) {
+
             }
         })
     </script>

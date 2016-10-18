@@ -30,6 +30,16 @@ h2 {
     margin-top: 20px;
     text-align: center;
 }
+/*Mobile Order CSS*/
+.flavor-img div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #979797;
+}
+.flavor-img img {
+    width: 116px;
+    height: 123px;
+} 
 .about {
     text-align: center;
     margin-bottom:50px;
