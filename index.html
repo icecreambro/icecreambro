@@ -265,25 +265,94 @@
                 <div class="modal-body">
                     <table class="flavor-img">
                         <tr>
-                            <td><img src="img/flavors/cc.png"> </td>
-                            <td><img src="img/flavors/mcc.png"> </td>
+                            <td>
+                                <img src="img/flavors/cc.png">
+                                <div class="quantity">
+                                    <p>Cookies &amp; Creme</p>
+                                    <div class="input-group">
+                                        <span class="input-group-addon less">-</span>
+                                        <input type="text" class="form-control"  value="1" readonly>
+                                        <span class="input-group-addon more">+</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="img/flavors/mcc.png">
+                                <div class="quantity">
+                                    <p>Mint Chocolate Chip</p>
+                                    <div class="input-group">
+                                        <span class="input-group-addon less">-</span>
+                                        <input type="text" class="form-control"  value="1" readonly>
+                                        <span class="input-group-addon more">+</span>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td><img src="img/flavors/pbp.png"> </td>
-                            <td><img src="img/flavors/scc.png"> </td>
+                            <td>
+                                <img src="img/flavors/pbp.png">
+                                <div class="quantity">
+                                    <p>Peanut Butter Party</p>
+                                    <div class="input-group">
+                                        <span class="input-group-addon less">-</span>
+                                        <input type="text" class="form-control"  value="1" readonly>
+                                        <span class="input-group-addon more">+</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="img/flavors/scc.png">
+                                <div class="quantity">
+                                    <p>Salted Caramel Craze</p>
+                                    <div class="input-group">
+                                        <span class="input-group-addon less">-</span>
+                                        <input type="text" class="form-control"  value="1" readonly>
+                                        <span class="input-group-addon more">+</span>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td><img src="img/flavors/scc_dairy_free.png"> </td>
-                            <td><img src="img/flavors/sccd.png"> </td>
+                            <td>
+                                <img src="img/flavors/scc_dairy_free.png">
+                                <div class="quantity">
+                                    <p>Salted Caramel Cluster (Dairy Free)</p>
+                                    <div class="input-group">
+                                        <span class="input-group-addon less">-</span>
+                                        <input type="text" class="form-control"  value="1" readonly>
+                                        <span class="input-group-addon more">+</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="img/flavors/sccd.png">
+                                <div class="quantity">
+                                    <p>Super Chunky Cookie Dough</p>
+                                    <div class="input-group">
+                                        <span class="input-group-addon less">-</span>
+                                        <input type="text" class="form-control"  value="1" readonly>
+                                        <span class="input-group-addon more">+</span>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td><img src="img/flavors/sfb.png"> </td>
+                            <td>
+                                <img src="img/flavors/sfb.png">
+                                <div class="quantity">
+                                    <p>Super Fudge Brownie</p>
+                                    <div class="input-group">
+                                        <span class="input-group-addon less">-</span>
+                                        <input type="text" class="form-control"  value="1" readonly>
+                                        <span class="input-group-addon more">+</span>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <p>Enter Contact Info</p>
                 </div>
             </div>
         </div>
@@ -389,6 +458,25 @@
             var agent = window.navigator.userAgent;
             if (/Android/i.test(agent) || /BlackBerry/i.test(agent) || /iPhone|iPad|iPod/i.test(agent) || /Opera Mini/i.test(agent) || /IEMobile/i.test(agent)) {
 
+            }
+        })
+
+        $('td').click(function() {
+            $('.quantity', this).toggle();
+        })
+        
+        $('.input-group').click(function(e) {
+            e.stopPropagation();
+            if (e.target.className.indexOf('more') >= 0) {
+                var val = parseInt($('input', this).val()) + 1;
+                $('input', this).val(val);
+            } else if (e.target.className.indexOf('less') >= 0) {
+                var val = parseInt($('input', this).val()) - 1;
+                if(val < 1){
+                    $(this).parent().hide();
+                } else {
+                    $('input', this).val(val);
+                }
             }
         })
     </script>

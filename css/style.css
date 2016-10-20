@@ -39,6 +39,8 @@ h2 {
 }
 .flavor-img td {
     width: 50%;
+    height: 143px;
+    position: relative;
     padding-top: 10px;
     padding-bottom: 10px;
     border: 1px solid #979797;
@@ -47,7 +49,25 @@ h2 {
 .flavor-img img {
     width: 116px;
     height: 123px;
-} 
+}
+.quantity {
+    display: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    padding-top: 20%;
+    background-color: rgba(78, 78, 78, .7)
+}
+.quantity p {
+    font-size: 18px;
+}
+.quantity .input-group {
+    width: 75%;
+    margin: 0 auto;
+}
+.quantity input {
+    text-align: center;
+}
 .about {
     text-align: center;
     margin-bottom:50px;
