@@ -31,8 +31,16 @@ h2 {
     text-align: center;
 }
 /*Mobile Order CSS*/
+.modal {
+    background-color: rgba(0, 0, 0, .6);
+}
+.modal-content {
+    height: 100vh;
+    overflow-y: hidden;
+}
 .modal-body {
     background: url('/img/background.jpg') no-repeat center center fixed;
+    height: 100%;
 }
 .flavor-img {
     width: 100%
@@ -68,7 +76,36 @@ h2 {
 .quantity input {
     text-align: center;
 }
+.info {
+    text-align: center;
+}
+.info label {
+    font-size: 30px;
+    font-weight: 300;
+}
+.info label:not(:first-of-type) {
+    padding-top: 17px;
+}
+.info input {
+    width: 80%;
+    margin: 0 auto;
+    border: none;
+    border-bottom: 3px solid #6A6A6A;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+    font-size: 24px;
+    text-align: center;
+    color: #6A6A6A;
+}
+.info input:focus {
+    border-color: #6A6A6A;
+    box-shadow: none;
+}
 .modal-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     padding: 0;
     background-color: #8AD8F3;
 }

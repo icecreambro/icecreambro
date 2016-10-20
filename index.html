@@ -357,6 +357,31 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Contact Info</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="info">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name">
+                        <label for="num">Phone Number</label>
+                        <input type="text" class="form-control" id="num" name="num">
+                        <label for="name">Location</label>
+                        <input type="text" class="form-control" id="loc" name="loc">
+                        <label for="name">Delivery Time</label>
+                        <input type="text" class="form-control" id="time" name="time">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p>Confirm Order <i class="arrow">&#8594;</i></p>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         // Add smooth scrolling to smooth class
         $(".smooth").on('click', function(e) {
@@ -461,10 +486,12 @@
             }
         })
 
+        // Show flavor
         $('td').click(function() {
             $('.quantity', this).toggle();
         })
         
+        // Select quantity
         $('.input-group').click(function(e) {
             e.stopPropagation();
             if (e.target.className.indexOf('more') >= 0) {
@@ -478,6 +505,12 @@
                     $('input', this).val(val);
                 }
             }
+        })
+        
+        // From order to info
+        $('#orderModal .modal-footer').click(function() {
+            $('#orderModal').modal('hide');
+            $('#infoModal').modal('show');
         })
     </script>
 </body>
