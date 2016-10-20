@@ -106,6 +106,9 @@ h2 {
     font-size: 30px;
     font-weight: 300;
 }
+#_order {
+    white-space: pre-wrap;
+}
 .modal-footer {
     position: absolute;
     bottom: 0px;
