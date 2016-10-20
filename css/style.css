@@ -68,6 +68,18 @@ h2 {
 .quantity input {
     text-align: center;
 }
+.modal-footer {
+    padding: 0;
+    background-color: #8AD8F3;
+}
+.modal-footer p {
+    color: #FFFFFF;
+    font-size: 30px;
+    text-align: center;
+}
+.arrow {
+    font-size: 40px;
+}
 .about {
     text-align: center;
     margin-bottom:50px;
