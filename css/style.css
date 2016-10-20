@@ -31,10 +31,18 @@ h2 {
     text-align: center;
 }
 /*Mobile Order CSS*/
-.flavor-img div {
+.modal-body {
+    background: url('/img/background.jpg') no-repeat center center fixed;
+}
+.flavor-img {
+    width: 100%
+}
+.flavor-img td {
+    width: 50%;
     padding-top: 10px;
     padding-bottom: 10px;
     border: 1px solid #979797;
+    text-align: center;
 }
 .flavor-img img {
     width: 116px;
