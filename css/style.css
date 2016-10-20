@@ -35,7 +35,7 @@ h2 {
     background-color: rgba(0, 0, 0, .6);
 }
 .modal-content {
-    height: 100vh;
+    height: 97vh;
     overflow-y: hidden;
 }
 .modal-body {
@@ -102,9 +102,13 @@ h2 {
     border-color: #6A6A6A;
     box-shadow: none;
 }
+.confirm p {
+    font-size: 30px;
+    font-weight: 300;
+}
 .modal-footer {
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     width: 100%;
     padding: 0;
     background-color: #8AD8F3;

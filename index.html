@@ -70,7 +70,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-4">
-                    <button class="btn btn-primary btn-lg smooth" data-toggle="modal" data-target="#orderModal">Order Now!!</button>
+                    <button class="btn btn-primary btn-lg smooth" data-toggle="modal" data-target="#infoModal">Order Now!!</button>
                 </div>
             </div>
         </div>
@@ -370,14 +370,36 @@
                         <input type="text" class="form-control" id="name" name="name">
                         <label for="num">Phone Number</label>
                         <input type="text" class="form-control" id="num" name="num">
-                        <label for="name">Location</label>
+                        <label for="loc">Location</label>
                         <input type="text" class="form-control" id="loc" name="loc">
-                        <label for="name">Delivery Time</label>
+                        <label for="time">Delivery Time</label>
                         <input type="text" class="form-control" id="time" name="time">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <p>Confirm Order <i class="arrow">&#8594;</i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Confirm Order</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="confirm">
+                        <p>Name: <span id="_name"></span></p>
+                        <p>Phone Number: <span id="_num"></span></p>
+                        <p>Location: <span id="_loc"></span></p>
+                        <p>Delivery Time: <span id="_time"></span></p>
+                        <p>Order: <span id="_order"></span></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p>Place Order</p>
                 </div>
             </div>
         </div>
@@ -511,6 +533,18 @@
         $('#orderModal .modal-footer').click(function() {
             $('#orderModal').modal('hide');
             $('#infoModal').modal('show');
+        })
+        
+        // From info to confirm
+        $('#infoModal .modal-footer').click(function() {
+            $('#infoModal').modal('hide');
+            $('#confirmModal').modal('show');
+            // Pull data from info to confirm
+            $('.info input').each(function() {
+                var val = $(this).val();
+                var name = $(this).attr('name');
+                $('#_'+name).html(val);
+            })
         })
     </script>
 </body>
