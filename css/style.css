@@ -86,7 +86,8 @@ h2 {
 .info label:not(:first-of-type) {
     padding-top: 17px;
 }
-.info input {
+.info input,
+.confirm input {
     width: 80%;
     margin: 0 auto;
     border: none;
@@ -98,7 +99,8 @@ h2 {
     text-align: center;
     color: #6A6A6A;
 }
-.info input:focus {
+.info input:focus,
+.confirm input:focus {
     border-color: #6A6A6A;
     box-shadow: none;
 }
@@ -108,6 +110,12 @@ h2 {
 }
 #_order {
     white-space: pre-wrap;
+}
+.mobile-promo {
+    text-align: center;
+}
+.mobile-promo a {
+    margin-top: 20px;
 }
 .modal-footer {
     position: absolute;

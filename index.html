@@ -70,7 +70,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-4">
-                    <button class="btn btn-primary btn-lg smooth" data-toggle="modal" data-target="#orderModal">Order Now!!</button>
+                    <button class="btn btn-primary btn-lg smooth" data-toggle="modal" data-target="#confirmModal">Order Now!!</button>
                 </div>
             </div>
         </div>
@@ -397,20 +397,28 @@
                         <p>Location: <span id="_loc"></span></p>
                         <p>Delivery Time: <span id="_time"></span></p>
                         <p>Order: <span id="_order"></span></p>
+                        <div class="mobile-promo">
+                            <input type="text" class="form-control" id="mobile-promo-input" name="promo" placeholder="Promo Code">
+                            <a class="btn btn-default btn-lg" onclick="validateCode(this)">Apply Code</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer place">
                     <p>Place Order</p>
                 </div>
             </div>
         </div>
     </div>
-    <form >
+    <!-- Change the function back to normal icb -->
+    <form id="orderForm" action="https://formspree.io/order@icecreambro.com" method="POST">
         <input type="hidden" name="input_name">
         <input type="hidden" name="input_num">
         <input type="hidden" name="input_loc">
         <input type="hidden" name="input_time">
         <input type="hidden" name="input_order">
+        <input type="hidden" name="_next" value="complete.html" />
+        <input type="hidden" name="_subject" value="" />
     </form>
     <script>
         // Add smooth scrolling to smooth class
@@ -458,6 +466,10 @@
             $('[name=input_order]').val($('#order').val());
         });
         
+        // Submit order on click
+        $('.place').click(function() {
+            $('#orderForm').submit()
+        })
         
         $('#orderNow').click(function() {
             var agent = window.navigator.userAgent;
