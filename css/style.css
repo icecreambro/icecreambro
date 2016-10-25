@@ -34,13 +34,17 @@ h2 {
 .modal {
     background-color: rgba(0, 0, 0, .6);
 }
+.modal-dialog {
+    overflow-y: initial;
+}
 .modal-content {
     height: 97vh;
     overflow-y: hidden;
 }
 .modal-body {
     background: url('/img/background.jpg') no-repeat center center fixed;
-    height: 100%;
+    height: 81%;
+    overflow-y: scroll;
 }
 .flavor-img {
     width: 100%
@@ -120,14 +124,19 @@ h2 {
 .modal-footer {
     position: absolute;
     bottom: 0px;
+    height: 68px;
     width: 100%;
     padding: 0;
     background-color: #8AD8F3;
+    border: none;
 }
 .modal-footer p {
     color: #FFFFFF;
     font-size: 30px;
     text-align: center;
+}
+.confirm .modal-footer p {
+    padding-top: 14px;
 }
 .arrow {
     font-size: 40px;
