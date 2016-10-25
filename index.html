@@ -39,7 +39,7 @@
     <title>Ice Cream Bro</title>
 </head>
 
-<body class="full" data-spy="scroll" data-target=".order">
+<body class="full" data-spy="scroll" data-target="#order">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -70,7 +70,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-4">
-                    <button class="btn btn-primary btn-lg smooth" data-toggle="modal" data-target="#confirmModal">Order Now!!</button>
+                    <a class="btn btn-primary btn-lg smooth" id="orderNow">Order Now!!</a>
                 </div>
             </div>
         </div>
@@ -400,7 +400,6 @@
                         <div class="mobile-promo">
                             <input type="text" class="form-control" id="mobile-promo-input" name="promo" placeholder="Promo Code">
                             <a class="btn btn-default btn-lg" onclick="validateCode(this)">Apply Code</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -443,15 +442,12 @@
         $('#orderModal .modal-footer').click(function() {
             $('.quantity:visible').each(function(){
                 var f = $('p', this).html()
-                console.log($('p', this).html());
                 var q = $('input', this).val()
-                console.log($('input', this).val());
                 var o = f+": "+q+"\n";
                 $('#order').val($('#order').val() + o);
             })
             $('#orderModal').modal('hide');
             $('#infoModal').modal('show');
-            console.log($('#order').val());
         })
 
         // From info to confirm
@@ -471,12 +467,16 @@
             $('#orderForm').submit()
         })
         
-        $('#orderNow').click(function() {
+        $(function(){
             var agent = window.navigator.userAgent;
             if (/Android/i.test(agent) || /BlackBerry/i.test(agent) || /iPhone|iPad|iPod/i.test(agent) || /Opera Mini/i.test(agent) || /IEMobile/i.test(agent)) {
-
+                $('#orderNow').click(function() {
+                    $('#orderModal').modal('open');
+                });
+            } else {
+                $(this).attr('href', '#order');
             }
-        })
+        });
     </script>
 </body>
 
