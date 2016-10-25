@@ -405,6 +405,13 @@
             </div>
         </div>
     </div>
+    <form >
+        <input type="hidden" name="input_name">
+        <input type="hidden" name="input_num">
+        <input type="hidden" name="input_loc">
+        <input type="hidden" name="input_time">
+        <input type="hidden" name="input_order">
+    </form>
     <script>
         // Add smooth scrolling to smooth class
         $(".smooth").on("click",function(a){if(""!==this.hash){a.preventDefault();var b=this.hash;$("html, body").animate({scrollTop:$(b).offset().top},800,function(){window.location.hash=b})}});
@@ -445,8 +452,10 @@
                 var a = $(this).val(),
                     b = $(this).attr('id');
                 $('#_' + b).html(a)
+                $('[name=input_'+b+']').val(a)
             })
             $('#_order').html('\n'+$('#order').val());
+            $('[name=input_order]').val($('#order').val());
         });
         
         
