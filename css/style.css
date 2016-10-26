@@ -125,7 +125,7 @@ h2 {
     margin-top: 20px;
 }
 .modal-footer {
-    position: relative;
+    position: absolute;
     bottom: 0px;
     height: 68px;
     width: 100%;
