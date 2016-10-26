@@ -1,42 +1,17 @@
-function showQuan(flav) {
-    $("select[name=" + flav + "-quantity]").toggle().removeAttr('disabled');
-    validateForm()
-}
+// Desktop order - show quan when flav is checked
+function showQuan(a){$("select[name="+a+"-quantity]").toggle().removeAttr("disabled"),validateForm()}
 
+// Validate form when input is changed
 $('input[type=text]').change(validateForm);
 
-function validateForm() {
-    var name = $('#name').val(),
-        num = $('#number').val(),
-        loc = $('#location').val(),
-        time = $('#time').val(),
-        flavors = $(':checkbox:checked').first().val();
-    if (name != '' && num != '' && loc != '' && time != '' && flavors == 'on') {
-        $('.submit-buttons button').removeClass('disabled');
-    } else {
-        $('.submit-buttons button').addClass('disabled');
-    }
-}
+// Validate form by checking how many inputs are complete
+function validateForm(){var a=$("#name").val(),b=$("#number").val(),c=$("#location").val(),d=$("#time").val(),e=$(":checkbox:checked").first().val();""!=a&&""!=b&&""!=c&&""!=d&&"on"==e?$(".submit-buttons button").removeClass("disabled"):$(".submit-buttons button").addClass("disabled")}
 
-function validateCode() {
-    var promos = ['HILLMAN25', 'JBUCKS25', 'MIR7', 'MIRS7']
-    var input = $('.promo input').val().toUpperCase();
-    var valid = $.inArray(input, promos) > -1;
-    if (valid) {
-        $('.promo .btn').removeClass().addClass('btn btn-success').html('Success!!');
-    } else {
-        $('.promo .btn').removeClass().addClass('btn btn-danger').html('Invalid Code.');
-    }
-}
+// Validate promo code
+function validateCode(elem) {var a = ["HILLMAN25", "JBUCKS25"],b = $("#mobile-promo-input").val().toUpperCase(),c = $.inArray(b, a) > -1;c ? $(elem).removeClass().addClass("btn btn-success btn-lg").html("Success!!"):$(elem).removeClass().addClass("btn btn-danger btn-lg").html("Invalid Code.")}
 
-$(function () {
-    var id = Math.floor(1000 + Math.random() * 9000);
-    $('input[name="_subject"]').val('Order ID: ' + id);
-});
+// Generate random order id
+$(function(){var a=Math.floor(1e3+9e3*Math.random());$('input[name="_subject"]').val("Order ID: "+a)});
 
-
-//Initialize Popovers
-
-$(function () {
-    $('[data-toggle="popover"]').popover()
-})
+// Initialize Popovers
+$(function(){$('[data-toggle="popover"]').popover()});

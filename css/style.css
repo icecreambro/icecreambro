@@ -30,6 +30,120 @@ h2 {
     margin-top: 20px;
     text-align: center;
 }
+/*Mobile Order CSS*/
+.modal {
+    background-color: rgba(0, 0, 0, .6);
+}
+.modal-dialog {
+    overflow-y: initial;
+}
+.modal-content {
+    height: 97vh;
+    overflow-y: hidden;
+}
+.modal-body {
+    background: url('/img/background.jpg') no-repeat center center fixed;
+    height: 81%;
+    overflow-y: scroll;
+}
+.flavor-img {
+    width: 100%
+}
+.flavor-img td {
+    width: 50%;
+    height: 143px;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #979797;
+    text-align: center;
+}
+.flavor-img img {
+    width: 116px;
+    height: 123px;
+}
+.quantity {
+    display: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    padding-top: 20%;
+    background-color: rgba(78, 78, 78, .7)
+}
+.quantity p {
+    font-size: 17px;
+    color: #D3D3D3;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+}
+.quantity .input-group {
+    width: 75%;
+    margin: 0 auto;
+}
+.quantity input {
+    text-align: center;
+}
+.info {
+    text-align: center;
+}
+.info label {
+    font-size: 30px;
+    font-weight: 300;
+}
+.info label:not(:first-of-type) {
+    padding-top: 17px;
+}
+.info input,
+.confirm input {
+    width: 80%;
+    margin: 0 auto;
+    border: none;
+    border-bottom: 3px solid #6A6A6A;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+    font-size: 24px;
+    text-align: center;
+    color: #6A6A6A;
+}
+.info input:focus,
+.confirm input:focus {
+    border-color: #6A6A6A;
+    box-shadow: none;
+}
+.confirm p {
+    font-size: 30px;
+    font-weight: 300;
+}
+#_order {
+    white-space: pre-wrap;
+}
+.mobile-promo {
+    text-align: center;
+}
+.mobile-promo a {
+    margin-top: 20px;
+}
+.modal-footer {
+    position: absolute;
+    bottom: 0px;
+    height: 68px;
+    width: 100%;
+    padding: 0;
+    background-color: #8AD8F3;
+    border: none;
+}
+.modal-footer p {
+    color: #FFFFFF;
+    font-size: 30px;
+    text-align: center;
+}
+.confirm .modal-footer p {
+    padding-top: 14px;
+}
+.arrow {
+    font-size: 40px;
+}
 .about {
     text-align: center;
     margin-bottom:50px;
