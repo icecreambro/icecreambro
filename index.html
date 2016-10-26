@@ -433,34 +433,49 @@
         $("#order-form").submit(function(){var a={},b="";$(".flavors input:checked").each(function(){b=$(this).attr("name")+"-quantity",b=$("[name="+b+"]").val(),a[$(this).attr("name")]=b});var c={sccd:"76fcda92-7f9a-4c3b-aede-e2cfd597a7d1",mcc:"698406f3-ca5e-4d7f-a0d3-817b619b25ab",sfb:"4d3dde4a-e199-4acd-8c06-cd9455b3cb98",scc:"FD3036BA-9590-43F0-B5AD-BE95663B0F51",cc:"cd69dd3b-caa7-4860-ab33-1ae817ba4c6d",pbp:"7ccb34f2-1b7c-45af-bdac-fd2171324776",dairyFree:"7d670508-53d6-4eba-8877-6c2d7a29a70c"};for(var d in a)for(var e in c)if(d==e){var f={quantity_delta:-1*a[d],adjustment_type:"SALE"};$.ajax({url:"https://connect.squareup.com/v1/0ZV4CY2PGCPX2/inventory/"+c[e],type:"POST",contentType:"application/json",processData:!1,data:JSON.stringify(f),beforeSend:function(a){a.setRequestHeader("Authorization","BEARER sq0atp-K4-4TIU5WTHbVAi39c98gA")},success:function(a){}})}});
 
         // Mobile, show quanity
-        $("td").click(function(){$(".quantity",this).toggle()});
+        $("td").click(function(){$(".quantity",this).toggle();checkFlavor();});
 
         // Mobile, select quantity
-        $(".input-group").click(function(a){if(a.stopPropagation(),a.target.className.indexOf("more")>=0){var b=parseInt($("input",this).val())+1;$("input",this).val(b)}else if(a.target.className.indexOf("less")>=0){var b=parseInt($("input",this).val())-1;b<1?$(this).parent().hide():$("input",this).val(b)}});
-
-        // From order to info 
-        $('#orderModal .modal-footer').click(function() {
-            $('.quantity:visible').each(function(){
-                var f = $('p', this).html()
-                var q = $('input', this).val()
-                var o = f+": "+q+"\n";
-                $('#order').val($('#order').val() + o);
-            })
-            $('#orderModal').modal('hide');
-            $('#infoModal').modal('show');
+        $(".input-group").click(function(a){if(a.stopPropagation(),a.target.className.indexOf("more")>=0){var b=parseInt($("input",this).val())+1;$("input",this).val(b)}else if(a.target.className.indexOf("less")>=0){var b=parseInt($("input",this).val())-1;b<1?$(this).parent().hide():$("input",this).val(b)}checkFlavor()});
+        
+        function checkFlavor() {
+            if($('.quantity:visible').length > 0){
+                // From order to info 
+                $('#orderModal .modal-footer').click(function() {
+                    $('.quantity:visible').each(function(){
+                        var f = $('p', this).html()
+                        var q = $('input', this).val()
+                        var o = f+": "+q+"\n";
+                        $('#order').val($('#order').val() + o);
+                    })
+                    $('#orderModal').modal('hide');
+                    $('#infoModal').modal('show');
+                })
+            } else {
+                $('#orderModal .modal-footer').unbind('click');
+            }
+        }
+        
+        $('.info input').change(function() {
+            if($('.info input').filter(function() {
+                return !!this.value;
+            }).length == 4){
+                console.log($('.info input').filter(function(){return !!this.value;}).length)
+                // From info to confirm
+                $("#infoModal .modal-footer").click(function() {
+                    $("#infoModal").modal("hide"), $("#confirmModal").modal("show"), $(".info input").each(function() {
+                        var a = $(this).val(),
+                            b = $(this).attr('id');
+                        $('#_' + b).html(a)
+                        $('[name=input_'+b+']').val(a)
+                    })
+                    $('#_order').html('\n'+$('#order').val());
+                    $('[name=input_order]').val($('#order').val());
+                });
+            } else {
+                $("#infoModal .modal-footer").unbind('click');
+            }
         })
-
-        // From info to confirm
-        $("#infoModal .modal-footer").click(function() {
-            $("#infoModal").modal("hide"), $("#confirmModal").modal("show"), $(".info input").each(function() {
-                var a = $(this).val(),
-                    b = $(this).attr('id');
-                $('#_' + b).html(a)
-                $('[name=input_'+b+']').val(a)
-            })
-            $('#_order').html('\n'+$('#order').val());
-            $('[name=input_order]').val($('#order').val());
-        });
         
         // Submit order on click
         $('.place').click(function() {
@@ -468,7 +483,7 @@
         })
         
         $(function(){
-            if (typeof window.orientation !== 'undefined') {
+            if (typeof window.orientation == 'undefined') {
                 $('#orderNow').click(function() {
                     $('#orderModal').modal('show');
                 });
