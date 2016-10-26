@@ -90,7 +90,7 @@ h2 {
 .j-stacker-wrapper {
     margin-top: 25px;
 }
-@media(min-width: 768px) {
+@media(max-width: 768px) {
     .submit-button {
         margin-top: 20px;
     }
