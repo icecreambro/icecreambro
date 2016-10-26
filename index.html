@@ -11,27 +11,29 @@
     <link rel="stylesheet" href="css/full.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="//use.edgefonts.net/advent-pro.js"></script>
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="js/function.js"></script>
 
     <!-- Begin Google Analytics -->
-
+    
     <script>
-                (function(i, s, o, g, r, a, m) {
-                    i['GoogleAnalyticsObject'] = r;
-                    i[r] = i[r] || function() {
-                        (i[r].q = i[r].q || []).push(arguments)
-                    }, i[r].l = 1 * new Date();
-                    a = s.createElement(o),
-                        m = s.getElementsByTagName(o)[0];
-                    a.async = 1;
-                    a.src = g;
-                    m.parentNode.insertBefore(a, m)
-                })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        
-                ga('create', 'UA-75421301-1', 'auto');
-                ga('send', 'pageview');
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-75421301-1', 'auto');
+        ga('send', 'pageview');
+
     </script>
 
 
@@ -39,7 +41,7 @@
     <title>Ice Cream Bro</title>
 </head>
 
-<body class="full" data-spy="scroll" data-target="#order">
+<body class="full" data-spy="scroll" data-target=".order">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -70,7 +72,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-4">
-                    <a class="btn btn-primary btn-lg smooth" id="orderNow">Order Now!!</a>
+                    <a href="#order" class="btn btn-primary btn-lg smooth">Order Now!!</a>
                 </div>
             </div>
         </div>
@@ -255,197 +257,102 @@
             </form>
         </div>
     </div>
-    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Select Flavor</h4>
-                </div>
-                <div class="modal-body">
-                    <table class="flavor-img">
-                        <tr>
-                            <td>
-                                <img src="img/flavors/cc.png">
-                                <div class="quantity">
-                                    <p>Cookies &amp; Creme</p>
-                                    <div class="input-group">
-                                        <span class="input-group-addon less">-</span>
-                                        <input type="text" class="form-control"  value="1" readonly>
-                                        <span class="input-group-addon more">+</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <img src="img/flavors/mcc.png">
-                                <div class="quantity">
-                                    <p>Mint Chocolate Chip</p>
-                                    <div class="input-group">
-                                        <span class="input-group-addon less">-</span>
-                                        <input type="text" class="form-control"  value="1" readonly>
-                                        <span class="input-group-addon more">+</span>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="img/flavors/pbp.png">
-                                <div class="quantity">
-                                    <p>Peanut Butter Party</p>
-                                    <div class="input-group">
-                                        <span class="input-group-addon less">-</span>
-                                        <input type="text" class="form-control"  value="1" readonly>
-                                        <span class="input-group-addon more">+</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <img src="img/flavors/scc.png">
-                                <div class="quantity">
-                                    <p>Salted Caramel Craze</p>
-                                    <div class="input-group">
-                                        <span class="input-group-addon less">-</span>
-                                        <input type="text" class="form-control"  value="1" readonly>
-                                        <span class="input-group-addon more">+</span>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="img/flavors/scc_dairy_free.png">
-                                <div class="quantity">
-                                    <p>Salted Caramel Cluster (Dairy Free)</p>
-                                    <div class="input-group">
-                                        <span class="input-group-addon less">-</span>
-                                        <input type="text" class="form-control"  value="1" readonly>
-                                        <span class="input-group-addon more">+</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <img src="img/flavors/sccd.png">
-                                <div class="quantity">
-                                    <p>Super Chunky Cookie Dough</p>
-                                    <div class="input-group">
-                                        <span class="input-group-addon less">-</span>
-                                        <input type="text" class="form-control"  value="1" readonly>
-                                        <span class="input-group-addon more">+</span>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="img/flavors/sfb.png">
-                                <div class="quantity">
-                                    <p>Super Fudge Brownie</p>
-                                    <div class="input-group">
-                                        <span class="input-group-addon less">-</span>
-                                        <input type="text" class="form-control"  value="1" readonly>
-                                        <span class="input-group-addon more">+</span>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                    <textarea id="order" hidden="hidden"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <p>Enter Contact Info <i class="arrow">&#8594;</i></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Contact Info</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="info">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name">
-                        <label for="num">Phone Number</label>
-                        <input type="text" class="form-control" id="num">
-                        <label for="loc">Location</label>
-                        <input type="text" class="form-control" id="loc">
-                        <label for="time">Delivery Time</label>
-                        <input type="text" class="form-control" id="time">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <p>Confirm Order <i class="arrow">&#8594;</i></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Confirm Order</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="confirm">
-                        <p>Name: <span id="_name"></span></p>
-                        <p>Phone Number: <span id="_num"></span></p>
-                        <p>Location: <span id="_loc"></span></p>
-                        <p>Delivery Time: <span id="_time"></span></p>
-                        <p>Order: <span id="_order"></span></p>
-                        <div class="mobile-promo">
-                            <input type="text" class="form-control" id="mobile-promo-input" name="promo" placeholder="Promo Code">
-                            <a class="btn btn-default btn-lg" onclick="validateCode(this)">Apply Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer place">
-                    <p>Place Order</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Change the function back to normal icb -->
-    <form id="orderForm" action="https://formspree.io/mvobzpbx" method="POST">
-        <input type="hidden" name="input_name">
-        <input type="hidden" name="input_num">
-        <input type="hidden" name="input_loc">
-        <input type="hidden" name="input_time">
-        <input type="hidden" name="input_order">
-        <input type="hidden" name="_next" value="complete.html" />
-        <input type="hidden" name="_subject" value="" />
-    </form>
     <script>
         // Add smooth scrolling to smooth class
-        $(".smooth").on("click",function(a){if(""!==this.hash){a.preventDefault();var b=this.hash;$("html, body").animate({scrollTop:$(b).offset().top},800,function(){window.location.hash=b})}});
+        $(".smooth").on('click', function(e) {
+            if (this.hash !== "") {
+                e.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function() {
+                    window.location.hash = hash;
+                })
+            };
+        });
 
         // Call Square, check inventory, remove element
-        $(document).ready(function(){$.ajax({url:"https://connect.squareup.com/v1/0ZV4CY2PGCPX2/inventory",type:"GET",beforeSend:function(a){a.setRequestHeader("Authorization","BEARER sq0atp-K4-4TIU5WTHbVAi39c98gA")},success:function(a){var b={sccd:"76fcda92-7f9a-4c3b-aede-e2cfd597a7d1",mcc:"698406f3-ca5e-4d7f-a0d3-817b619b25ab",sfb:"4d3dde4a-e199-4acd-8c06-cd9455b3cb98",scc:"FD3036BA-9590-43F0-B5AD-BE95663B0F51",cc:"cd69dd3b-caa7-4860-ab33-1ae817ba4c6d",pbp:"7ccb34f2-1b7c-45af-bdac-fd2171324776",dairyFree:"7d670508-53d6-4eba-8877-6c2d7a29a70c"};for(var c in a){var f,d=a[c].variation_id,e=a[c].quantity_on_hand;for(var g in b)b[g]==d&&e<1&&(f=$("[name="+g+"]").closest(".col-xs-8"))}CheckFieldset($("#regular")),CheckFieldset($("#special"))}})});
+        $(document).ready(function() {
+            $.ajax({
+                url: 'https://connect.squareup.com/v1/0ZV4CY2PGCPX2/inventory',
+                type: 'GET',
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", "BEARER " + 'sq0atp-K4-4TIU5WTHbVAi39c98gA');
+                },
+                success: function(R) {
+                    var a = {
+                        sccd: '76fcda92-7f9a-4c3b-aede-e2cfd597a7d1',
+                        mcc: '698406f3-ca5e-4d7f-a0d3-817b619b25ab',
+                        sfb: '4d3dde4a-e199-4acd-8c06-cd9455b3cb98',
+                        scc: 'FD3036BA-9590-43F0-B5AD-BE95663B0F51',
+                        cc: 'cd69dd3b-caa7-4860-ab33-1ae817ba4c6d',
+                        pbp: '7ccb34f2-1b7c-45af-bdac-fd2171324776',
+                        dairyFree: '7d670508-53d6-4eba-8877-6c2d7a29a70c'
+                    }
+                    for (var r in R) {
+                        var i = R[r].variation_id,
+                            q = R[r].quantity_on_hand,
+                            b;
+                        for (var e in a) {
+                            if (a[e] == i && q < 1) {
+                                b = $('[name=' + e + ']').closest('.col-xs-8');
+                                $(b).next().remove();
+                                $(b).remove();
+                            }
+                        }
+                    }
+                   CheckFieldset($('#regular'));
+                   CheckFieldset($('#special'));
+                }
+            });
+        })
 
-        // Check if fieldset is empty
-        function CheckFieldset(a){1==$(a).children().length&&$(a).remove()}
+        function CheckFieldset(e) {
+            if ($(e).children().length == 1) {
+                $(e).remove();
+            }
+        }
 
         // Take order, remove from inventory
-        $("#order-form").submit(function(){var a={},b="";$(".flavors input:checked").each(function(){b=$(this).attr("name")+"-quantity",b=$("[name="+b+"]").val(),a[$(this).attr("name")]=b});var c={sccd:"76fcda92-7f9a-4c3b-aede-e2cfd597a7d1",mcc:"698406f3-ca5e-4d7f-a0d3-817b619b25ab",sfb:"4d3dde4a-e199-4acd-8c06-cd9455b3cb98",scc:"FD3036BA-9590-43F0-B5AD-BE95663B0F51",cc:"cd69dd3b-caa7-4860-ab33-1ae817ba4c6d",pbp:"7ccb34f2-1b7c-45af-bdac-fd2171324776",dairyFree:"7d670508-53d6-4eba-8877-6c2d7a29a70c"};for(var d in a)for(var e in c)if(d==e){var f={quantity_delta:-1*a[d],adjustment_type:"SALE"};$.ajax({url:"https://connect.squareup.com/v1/0ZV4CY2PGCPX2/inventory/"+c[e],type:"POST",contentType:"application/json",processData:!1,data:JSON.stringify(f),beforeSend:function(a){a.setRequestHeader("Authorization","BEARER sq0atp-K4-4TIU5WTHbVAi39c98gA")},success:function(a){}})}});
-
-        // Mobile, show quanity
-        $("td").click(function(){$(".quantity",this).toggle();checkFlavor();});
-
-        // Mobile, select quantity
-        $(".input-group").click(function(a){if(a.stopPropagation(),a.target.className.indexOf("more")>=0){var b=parseInt($("input",this).val())+1;$("input",this).val(b)}else if(a.target.className.indexOf("less")>=0){var b=parseInt($("input",this).val())-1;b<1?$(this).parent().hide():$("input",this).val(b)}checkFlavor()});
-        
-        function checkFlavor(){$(".quantity:visible").length>0?$("#orderModal .modal-footer").click(function(){$(".quantity:visible").each(function(){var a=$("p",this).html(),b=$("input",this).val(),c=a+": "+b+"\n";$("#order").val($("#order").val()+c)}),$("#orderModal").modal("hide"),$("#infoModal").modal("show")}):$("#orderModal .modal-footer").unbind("click")}
-        
-        $(".info input").change(function(){4==$(".info input").filter(function(){return!!this.value}).length?(console.log($(".info input").filter(function(){return!!this.value}).length),$("#infoModal .modal-footer").click(function(){$("#infoModal").modal("hide"),$("#confirmModal").modal("show"),$(".info input").each(function(){var a=$(this).val(),b=$(this).attr("id");$("#_"+b).html(a),$("[name=input_"+b+"]").val(a)}),$("#_order").html("\n"+$("#order").val()),$("[name=input_order]").val($("#order").val())})):$("#infoModal .modal-footer").unbind("click")});
-        
-        // Submit order on click
-       $(".place").click(function(){$("#orderForm").submit()});
-        
-        $(function(){"undefined"!=typeof window.orientation?$("#orderNow").click(function(){$("#orderModal").modal("show")}):$("#orderNow").attr("href","#order")});
+        $('#order-form').submit(function() {
+            var o = {};
+            var q = "";
+            $('.flavors input:checked').each(function() {
+                q = $(this).attr('name') + '-quantity';
+                q = $('[name=' + q + ']').val();
+                o[$(this).attr('name')] = q;
+            })
+            var a = {
+                sccd: '76fcda92-7f9a-4c3b-aede-e2cfd597a7d1',
+                mcc: '698406f3-ca5e-4d7f-a0d3-817b619b25ab',
+                sfb: '4d3dde4a-e199-4acd-8c06-cd9455b3cb98',
+                scc: 'FD3036BA-9590-43F0-B5AD-BE95663B0F51',
+                cc: 'cd69dd3b-caa7-4860-ab33-1ae817ba4c6d',
+                pbp: '7ccb34f2-1b7c-45af-bdac-fd2171324776',
+                dairyFree: '7d670508-53d6-4eba-8877-6c2d7a29a70c'
+            }
+            for (var f in o) {
+                for (var i in a) {
+                    if (f == i) {
+                        var data = {
+                            "quantity_delta": -1 * o[f],
+                            "adjustment_type": "SALE"
+                        }
+                        $.ajax({
+                            url: 'https://connect.squareup.com/v1/0ZV4CY2PGCPX2/inventory/' + a[i],
+                            type: 'POST',
+                            contentType: 'application/json',
+                            processData: false,
+                            data: JSON.stringify(data),
+                            beforeSend: function(xhr) {
+                                xhr.setRequestHeader("Authorization", "BEARER " + 'sq0atp-K4-4TIU5WTHbVAi39c98gA');
+                            },
+                            success: function(R) {}
+                        })
+                    }
+                }
+            }
+        })
     </script>
 </body>
 
