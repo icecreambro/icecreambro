@@ -71,7 +71,10 @@ h2 {
     background-color: rgba(78, 78, 78, .7)
 }
 .quantity p {
-    font-size: 18px;
+    font-size: 17px;
+    color: #D3D3D3;
+    font-weight: 300;
+    letter-spacing: 1.1px;
 }
 .quantity .input-group {
     width: 75%;

@@ -468,13 +468,12 @@
         })
         
         $(function(){
-            var agent = window.navigator.userAgent;
-            if (/Android/i.test(agent) || /BlackBerry/i.test(agent) || /iPhone|iPad|iPod/i.test(agent) || /Opera Mini/i.test(agent) || /IEMobile/i.test(agent)) {
+            if (typeof window.orientation !== 'undefined') {
                 $('#orderNow').click(function() {
-                    $('#orderModal').modal('open');
+                    $('#orderModal').modal('show');
                 });
             } else {
-                $(this).attr('href', '#order');
+                $('#orderNow').attr('href', '#order');
             }
         });
     </script>
