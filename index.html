@@ -445,7 +445,7 @@
         // Submit order on click
        $(".place").click(function(){$("#orderForm").submit()});
         
-        $(function(){"undefined"!=typeof window.orientation?$("#orderNow").click(function(){$("#orderModal").modal("show")}):$("#orderNow").attr("href","#order")});
+        $(function(){"undefined"==typeof window.orientation?$("#orderNow").click(function(){$("#orderModal").modal("show")}):$("#orderNow").attr("href","#order")});
     </script>
 </body>
 
