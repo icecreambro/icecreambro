@@ -13,7 +13,5 @@ function validateCode(elem) {var a = ["HILLMAN25", "JBUCKS25"],b = $("#mobile-pr
 // Generate random order id
 $(function(){var a=Math.floor(1e3+9e3*Math.random());$('input[name="_subject"]').val("Order ID: "+a)});
 
-
 // Initialize Popovers
 $(function(){$('[data-toggle="popover"]').popover()});
-
