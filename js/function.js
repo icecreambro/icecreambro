@@ -19,7 +19,7 @@ function validateForm() {
 }
 
 function validateCode() {
-    var promos = ['HILLMAN25', 'JBUCKS25', 'MIR7', 'MIRS7']
+    var promos = ['HILLMAN25', 'JBUCKS25', 'BEAT WISCO']
     var input = $('.promo input').val().toUpperCase();
     var valid = $.inArray(input, promos) > -1;
     if (valid) {
