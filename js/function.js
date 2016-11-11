@@ -30,10 +30,8 @@ function validateCode() {
 }
 
 $(function () {
-    var id = Math.floor(1000 + Math.random() * 9000),
-        loc = $('#location').val(),
-        time = $('#time').val();
-    $('input[name="_subject"]').val(time + loc + 'Order ID: ' + id);
+    var id = Math.floor(1000 + Math.random() * 9000)
+    $('input[name="_subject"]').val('Order ID: ' + id);
 });
 
 
