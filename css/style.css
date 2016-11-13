@@ -78,17 +78,23 @@ h2 {
 .email legend {
     padding-bottom: 10px;
 }
-.social {
+.packages {
+    margin-bottom: 20px;
+}
+.packages h1 {
     text-align: center;
 }
-.referral {
-    display: none !important;
+.packages h2 {
+    text-align: center;
 }
-.juicer {
-    display: none !important;
+.packages h3 {
+    text-align: center;
 }
-.j-stacker-wrapper {
-    margin-top: 25px;
+.packages p {
+    font-size: 22px
+}
+.packages button {
+    width: 100%
 }
 @media(max-width: 768px) {
     .submit-button {
