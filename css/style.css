@@ -97,6 +97,14 @@ h2 {
 .packages button {
     width: 100%
 }
+.how h3 {
+    font-size: 35px;
+}
+.how hr {
+    border-color: black;
+    border-width: 2px;
+    margin-top: 0;
+}
 @media(max-width: 768px) {
     .submit-button {
         margin-top: 20px;
