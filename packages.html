@@ -13,6 +13,7 @@
 
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script async src="https://www.trycelery.com/js/celery.js"></script>
 
     <!-- Begin Google Analytics -->
     <script>
@@ -34,7 +35,7 @@
     </script>
 
     <link rel="icon" href="img/bowl.png">
-    <title>Order Complete</title>
+    <title>Ice Cream Bro Packages</title>
 </head>
 
 <body class="full">
@@ -61,27 +62,41 @@
         </div>
     </nav>
 
-    <div class="container complete">
-        <h1>You did it!!!</h1>
-        <h2>While you're waiting, make sure you follow us on  <a href="https://twitter.com/icecreambrounl">Twitter</a> and <a href="https://instagram.com/icecreambrounl/">Instagram</a></h2>
-
-        <form action="https://formspree.io/myyvgvrm" method="POST" class="form-horizontal row">
-            <fieldset class="col-xs-10 col-xs-offset-1 email">
-                <legend>Want some sweet deals? Join our email list!!</legend>
-                <div class="form-group">
-                    <div class="col-sm-5 col-xs-6">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Name">
-                    </div>
-                    <div class="col-sm-5 col-xs-6">
-                        <input type="email" class="form-control" id="number" name="email" placeholder="Email">
-                    </div>
-                    <div class="col-xs-2 col-xs-offset-5 col-sm-offset-0 submit-button">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </div>
-            </fieldset>
-            <input type="hidden" name="_next" value="/" />
-        </form>
+    <div class="container packages">
+        <h1>Ice Cream Bro Packages</h1>
+        <h2>More than just ice cream.</h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Brownie Package</h3>
+                <p>Ever want to have brownies and ice cream, but didn't have any of the supplies? For $10, you can have a box of brownie mix and two pints of ice cream delivered to your door.</p>
+                <button data-celery="582553a7ad060d12006afd25" class="btn btn-primary">
+                    Check it out
+                </button>
+            </div>
+            <div class="col-sm-4">
+                <h3>Movie Package</h3>
+                <p>Movie night just got a lot better with this package. $10 for popcorn, M&amp;M's, and ice cream. Netflix and chill be an instant success.</p>
+                <button data-celery="582534cbad060d12006afc64" class="btn btn-primary">
+                    Check it out
+                </button>
+            </div>
+            <div class="col-sm-4">
+                <h3>Study Package</h3>
+                <p>Who says studying has to be boring? For $10, you can have Goldfish, trail mix, pretzels, and ice cream. Talk about an instant study break.</p>
+                <button data-celery="5821776810d15111007903a3" class="btn btn-primary">
+                    Check it out
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 how">
+                <h3>How Packages Work</h3>
+                <hr>
+                <p>
+                    It's pretty simple. You order a Package, and we bring it to you. When we recieve your order, we will text you to figure out delivery details. While we will always try to get Packages to you as fast as we can, Thursdays are the only night we promise on-demand delivery. You can order any day of the week, and we'll figure out a delivery time that works for both of us.
+                </p>
+            </div>
+        </div>
     </div>
 </body>
 
