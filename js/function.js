@@ -3,21 +3,6 @@ function showQuan(flav) {
     validateForm()
 }
 
-$('input[type=text]').change(validateForm);
-
-function validateForm() {
-    var name = $('#name').val(),
-        num = $('#number').val(),
-        loc = $('#location').val(),
-        time = $('#time').val(),
-        flavors = $(':checkbox:checked').first().val();
-    if (name != '' && num != '' && loc != '' && time != '' && flavors == 'on') {
-        $('.submit-buttons button').removeClass('disabled');
-    } else {
-        $('.submit-buttons button').addClass('disabled');
-    }
-}
-
 function validateCode() {
     var promos = ['HILLMAN25', 'JBUCKS25', 'THANKSGIVING']
     var input = $('.promo input').val().toUpperCase();
