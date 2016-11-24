@@ -17,6 +17,7 @@ function validateCode() {
 $(function () {
     var id = Math.floor(1000 + Math.random() * 9000)
     $('input[name="_subject"]').val('Order ID: ' + id);
+    $('input[name="_next"]').val('complete.html?id='+id);
 });
 
 
