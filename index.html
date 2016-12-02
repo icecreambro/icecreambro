@@ -219,12 +219,50 @@
                             <div class="col-xs-8">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="dairyFree" onclick="showQuan('dairyFree')"> So Delicious Salted Caramel Cluster (Dairy Free)
+                                        <input type="checkbox" name="CM" onclick="showQuan('CM')"> Ben &amp; Jerry's Chunky Monkey (Dairy Free)
                                     </label>
                                 </div>
                             </div>
                             <div class="col-xs-4">
-                                <select class="form-control" name="dairyFree-quantity" disabled>
+                                <select class="form-control" name="CM-quantity" disabled>
+                                    <optgroup label="Quantity">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="CFB" onclick="showQuan('CFB')"> Ben &amp; Jerry's Chocolate Fudge Brownie (Dairy Free)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <select class="form-control" name="CFB-quantity" disabled>
+                                    <optgroup label="Quantity">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="col-xs-8">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="CCF" onclick="showQuan('CCF')"> Ben &amp; Jerry's Coffee Caramel Fudge (Dairy Free)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <select class="form-control" name="CCF-quantity" disabled>
                                     <optgroup label="Quantity">
                                         <option>1</option>
                                         <option>2</option>
@@ -237,19 +275,29 @@
                         </div>
                     </fieldset>
                 </div>
+                
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2" style="text-align:center">
+                        <h3> In need of some holiday cheer? Turn your order into a Christmas package for just $2 extra.</h3>
+                        <label style="font-size:20px">
+                            <input type="checkbox" name="christmas"> Christmas Package
+                        </label>
+                        <p>The Christmas Package includes two packs of hot chocolate, two candy canes, and Hershey's Kisses.</p>
+                    </div>
+                </div>
 
                 <div class="row promo">
-                    <div class="col-sm-4 col-xs-6">
+                    <div class="col-sm-4 col-xs-6 col-sm-offset-3">
                         <input type="text" class="form-control" id="promo" name="promo" placeholder="Promo Code">
                     </div>
-                    <div class="col-sm-2 col-xs-4">
+                    <div class="col-sm-2 col-xs-6" style="text-align:center">
                         <a class="btn btn-default" onclick="validateCode()">Apply Code</a>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-xs-12 submit-button">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                     </div>
                 </div>
                 <input type="hidden" name="_next" value="complete.html" />
