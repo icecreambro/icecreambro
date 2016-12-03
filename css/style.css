@@ -17,6 +17,9 @@ h2 {
 .landing-page .row {
     padding-top: 10vh;
 }
+.landing-page p {
+    padding-top: 10px;
+}
 #order {
     height: 80vh;
 }
