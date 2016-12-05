@@ -8,8 +8,8 @@ h1 {
 h2 {
     font-size: 30px;
 }
-.full-page {
-    height: 92vh;
+.landing-page {
+    margin-bottom: 80px;
 }
 .landing-page div {
     text-align: center;
