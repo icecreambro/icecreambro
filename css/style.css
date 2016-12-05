@@ -8,14 +8,17 @@ h1 {
 h2 {
     font-size: 30px;
 }
-.full-page {
-    height: 92vh;
+.landing-page {
+    margin-bottom: 80px;
 }
 .landing-page div {
     text-align: center;
 }
 .landing-page .row {
     padding-top: 10vh;
+}
+.landing-page h3 {
+    margin: 10px 0 0;
 }
 #order {
     height: 80vh;
@@ -104,6 +107,24 @@ h2 {
     border-color: black;
     border-width: 2px;
     margin-top: 0;
+}
+.party {
+    text-align: center;
+}
+.party p {
+    font-size: 22px
+}
+.party form {
+    text-align: left;
+}
+.party .submit-button {
+    text-align: center;
+}
+.party textarea {
+    width: 100%;
+    height: 90px;
+    resize: none;
+    
 }
 @media(max-width: 768px) {
     .submit-button {

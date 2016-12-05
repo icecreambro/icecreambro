@@ -18,20 +18,20 @@
     <!-- Begin Google Analytics -->
     
     <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-75421301-1', 'auto');
-        ga('send', 'pageview');
+//        (function(i, s, o, g, r, a, m) {
+//            i['GoogleAnalyticsObject'] = r;
+//            i[r] = i[r] || function() {
+//                (i[r].q = i[r].q || []).push(arguments)
+//            }, i[r].l = 1 * new Date();
+//            a = s.createElement(o),
+//                m = s.getElementsByTagName(o)[0];
+//            a.async = 1;
+//            a.src = g;
+//            m.parentNode.insertBefore(a, m)
+//        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+//
+//        ga('create', 'UA-75421301-1', 'auto');
+//        ga('send', 'pageview');
 
     </script>
 
@@ -63,20 +63,22 @@
         </div>
     </nav>
     <div class="container">
-        <div class="landing-page full-page">
+        <div class="landing-page">
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1">
                     <h1>Ice Cream Bro</h1>
-                    <h2>You need ice cream. <br> We bring it to you.</h2>
+                    <h2>You need ice cream. <br> We bring it to you. <br> Open all of Dead Week.</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 col-sm-offset-4">
+                <div class="col-sm-6 col-sm-offset-3">
                     <a href="#order" class="btn btn-primary btn-lg smooth">Order Now</a>
+                    <h3>Ordering for someone else? Do that <a href="packages.html">here</a>.</h3>
+<!--                    <h3>Ice cream parties happen <a href="party.html">here</a>.</h3>-->
                 </div>
             </div>
         </div>
-        <div id="order">
+        <div id="order" class="row">
             <form action="https://formspree.io/mvobzpbx" method="POST" class="form-horizontal" id="order-form">
                 <fieldset>
                     <legend>Info</legend>
@@ -90,7 +92,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" id="location" name="location" placeholder="Building & Room" required>
+                            <input type="text" class="form-control" id="location" name="location" placeholder="Location" required>
                         </div>
                         <div class="col-xs-6">
                             <input type="text" class="form-control" id="time" name="time" placeholder="Delivery Time" required>
@@ -276,6 +278,7 @@
                     </fieldset>
                 </div>
                 
+<!--
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2" style="text-align:center">
                         <h3> In need of some holiday cheer? Turn your order into a Christmas package for just $2 extra.</h3>
@@ -285,6 +288,7 @@
                         <p>The Christmas Package includes two packs of hot chocolate, two candy canes, and Hershey's Kisses.</p>
                     </div>
                 </div>
+-->
 
                 <div class="row promo">
                     <div class="col-sm-4 col-xs-6 col-sm-offset-3">
