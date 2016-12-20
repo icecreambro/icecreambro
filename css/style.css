@@ -50,6 +50,13 @@ h2 {
 .about .name {
     font-size: 30px;
 }
+.about .title {
+    font-size: 20px;
+}
+.about br {
+    display: block;
+    margin: 10px 0;
+}
 .contact {
     text-align: center;
 }
