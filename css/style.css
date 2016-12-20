@@ -37,9 +37,18 @@ h2 {
 .about {
     text-align: center;
 }
+.about .team h2 {
+    padding-bottom: 20px
+}
 .about .solo {
     width: auto;
-    height: 400px;
+    height: 300px;
+}
+.about p {
+    margin-bottom: 0;
+}
+.about .name {
+    font-size: 30px;
 }
 .contact {
     text-align: center;
