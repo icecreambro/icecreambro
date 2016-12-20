@@ -37,6 +37,9 @@ h2 {
 .about {
     text-align: center;
 }
+.about .text {
+    font-size: 25px;
+}
 .about .team h2 {
     padding-bottom: 20px
 }
@@ -53,8 +56,7 @@ h2 {
 .about .title {
     font-size: 20px;
 }
-.about br {
-    display: block;
+.about .personal {
     margin: 10px 0;
 }
 .contact {
