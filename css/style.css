@@ -50,7 +50,7 @@ form {
 .contact form legend {
     padding-bottom: 10px;
 }
-.contact .email {
+.contact .email div {
     margin: 0 auto 15px;
 }
 .complete {
@@ -65,17 +65,8 @@ form {
 .packages {
     margin-bottom: 20px;
 }
-.packages h1 {
-    text-align: center;
-}
-.packages h2 {
-    text-align: center;
-}
-.packages h3 {
-    text-align: center;
-}
 .packages p {
-    font-size: 22px
+    font-size: 18px
 }
 .packages button {
     width: 100%
