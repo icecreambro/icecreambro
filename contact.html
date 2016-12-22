@@ -54,14 +54,14 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
-<!--                    <li><a href="packages.html">Packages</a></li>-->
+                    <li><a href="packages.html">Packages</a></li>
                     <li><a href="merch.html">Merch</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container contact">
+    <div class="container contact text-center">
         <h1>Let's Keep in Touch.</h1>
         <div class="row social">
             <div class="col-xs-6 col-sm-3">
@@ -77,28 +77,17 @@
                 <a href="mailto:info@icecreambro.com"> <img src="img/email.png" alt="Email Link"></a>
             </div>
         </div>
-        
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <h3>Interested in having Ice Cream Bro cater an event?</h3>
-                <h4>Email us at <a href="mailto:info@icecreambro.com">info@icecreambro.com</a> for more information!!</h4>
-            </div>
-        </div>
 
-        <form action="https://formspree.io/order@icecreambro.com" method="POST" class="form-horizontal row">
+        <form action="https://formspree.io/email@icecreambro.com" method="POST" class="row">
             <fieldset class="col-xs-10 col-xs-offset-1 email">
                 <legend>Want some sweet deals? Join our email list!!</legend>
-                <div class="form-group">
-                    <div class="col-sm-5 col-xs-6">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Name">
-                    </div>
-                    <div class="col-sm-5 col-xs-6">
-                        <input type="email" class="form-control" id="number" name="email" placeholder="Email">
-                    </div>
-                    <div class="col-xs-2 col-xs-offset-5 col-sm-offset-0 submit-button">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
                 </div>
+                <div class="col-sm-5">
+                    <input type="email" class="form-control" id="number" name="email" placeholder="Email">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </fieldset>
             <input type="hidden" name="_next" value="/" />
         </form>
