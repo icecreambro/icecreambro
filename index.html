@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Ice Cream, Delivery, UNL, College">
     <meta name="description" content="Your On-Demand, On-Campus Ice Cream Delivery">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="css/full.css">
@@ -16,22 +16,22 @@
     <script src="js/function.js"></script>
 
     <!-- Begin Google Analytics -->
-    
+
     <script>
-//       (function(i, s, o, g, r, a, m) {
-//           i['GoogleAnalyticsObject'] = r;
-//           i[r] = i[r] || function() {
-//               (i[r].q = i[r].q || []).push(arguments)
-//           }, i[r].l = 1 * new Date();
-//           a = s.createElement(o),
-//               m = s.getElementsByTagName(o)[0];
-//           a.async = 1;
-//           a.src = g;
-//           m.parentNode.insertBefore(a, m)
-//       })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-//
-//       ga('create', 'UA-75421301-1', 'auto');
-//       ga('send', 'pageview');
+        //       (function(i, s, o, g, r, a, m) {
+        //           i['GoogleAnalyticsObject'] = r;
+        //           i[r] = i[r] || function() {
+        //               (i[r].q = i[r].q || []).push(arguments)
+        //           }, i[r].l = 1 * new Date();
+        //           a = s.createElement(o),
+        //               m = s.getElementsByTagName(o)[0];
+        //           a.async = 1;
+        //           a.src = g;
+        //           m.parentNode.insertBefore(a, m)
+        //       })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        //
+        //       ga('create', 'UA-75421301-1', 'auto');
+        //       ga('send', 'pageview');
 
     </script>
 
@@ -56,25 +56,249 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
-<!--                    <li><a href="packages.html">Packages</a></li>-->
+                    <!--                    <li><a href="packages.html">Packages</a></li>-->
                     <li><a href="merch.html">Merch</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container">
-        <div class="landing-page">
+    <div class="container-fluid">
+        <div class="landing-page text-center">
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1">
                     <h1>Ice Cream Bro</h1>
-                    <h2>You need ice cream. <br> We bring it to you.</h2>
+                    <h2>You need ice cream.<br>We bring it to you.</h2>
                 </div>
             </div>
             <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 order-cta">
+                    <a href="#order" class="btn btn-primary btn-lg smooth">Order Below</a>
+                </div>
                 <div class="col-sm-6 col-sm-offset-3">
-                    <a href="#order" class="btn btn-danger btn-lg smooth">Closed for Break.</a>
+                        <p>Ordering for someone else? Do that <a href="packages.html">here</a>.<br>
+                            Ice cream parties happen <a href="party.html">here</a>.</p>
                 </div>
             </div>
+        </div>
+        <div id="order" class="row">
+            <form action="https://formspree.io/order@icecreambro.com" method="POST" class="form-horizontal" id="order-form">
+                <div class="form-group row">
+                    <fieldset>
+                        <legend>Info</legend>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="number" name="number" placeholder="Phone Number" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="location" name="location" placeholder="Location" required>
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="time" name="time" placeholder="Delivery Time" required>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="form-group row flavors">
+                    <fieldset id="regular">
+                        <legend>Regular Pints - $4</legend>
+                        <div class="col-sm-6">
+                            <div class="col-xs-8">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="sccd" onclick="showQuan('sccd')"> Super Chunky Cookie Dough
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <select class="form-control" name="sccd-quantity" disabled>
+                                    <optgroup label="Quantity">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="mcc" onclick="showQuan('mcc')"> Mint Chocolate Chip
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <select class="form-control" name="mcc-quantity" disabled>
+                                    <optgroup label="Quantity">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="sfb" onclick="showQuan('sfb')"> Super Fudge Brownie
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <select class="form-control" name="sfb-quantity" disabled>
+                                    <optgroup label="Quantity">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="col-xs-8">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="scc" onclick="showQuan('scc')"> Salted Caramel Craze
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <select class="form-control" name="scc-quantity" disabled>
+                                    <optgroup label="Quantity">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="cc" onclick="showQuan('cc')"> Cookies &amp; Creme
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <select class="form-control" name="cc-quantity" disabled>
+                                    <optgroup label="Quantity">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="pbp" onclick="showQuan('pbp')"> Peanut Butter Party
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <select class="form-control" name="pbp-quantity" disabled>
+                                    <optgroup label="Quantity">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset id="special">
+                        <legend>Dairy Free Pints - $6 </legend>
+                        <div class="col-sm-6">
+                            <div class="col-xs-8">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="CM" onclick="showQuan('CM')"> Chunky Monkey
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <select class="form-control" name="CM-quantity" disabled>
+                                    <optgroup label="Quantity">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="CFB" onclick="showQuan('CFB')"> Chocolate Fudge Brownie
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <select class="form-control" name="CFB-quantity" disabled>
+                                    <optgroup label="Quantity">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="col-xs-8">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="CCF" onclick="showQuan('CCF')"> Coffee Caramel Fudge
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <select class="form-control" name="CCF-quantity" disabled>
+                                    <optgroup label="Quantity">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12 submit-button">
+                        <button type="submit" class="btn btn-primary btn-lg">Place Order</button>
+                    </div>
+
+                    <div class="row promo">
+                        <div class="col-sm-4 col-xs-6 col-sm-offset-3">
+                            <input type="text" class="form-control" id="promo" name="promo" placeholder="Promo Code">
+                        </div>
+                        <div class="col-sm-2 col-xs-6" style="text-align:center">
+                            <a class="btn btn-default" onclick="validateCode()">Apply Code</a>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="_next" value="complete.html" />
+                <input type="hidden" name="_subject" value="" />
+            </form>
         </div>
     </div>
     <script>
@@ -92,46 +316,47 @@
         });
 
         // Call Square, check inventory, remove element
-        $(document).ready(function() {
-            $.ajax({
-                url: 'https://connect.squareup.com/v1/0ZV4CY2PGCPX2/inventory',
-                type: 'GET',
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader("Authorization", "BEARER " + 'sq0atp-K4-4TIU5WTHbVAi39c98gA');
-                },
-                success: function(R) {
-                    var a = {
-                        sccd: '76fcda92-7f9a-4c3b-aede-e2cfd597a7d1',
-                        mcc: '698406f3-ca5e-4d7f-a0d3-817b619b25ab',
-                        sfb: '4d3dde4a-e199-4acd-8c06-cd9455b3cb98',
-                        scc: 'FD3036BA-9590-43F0-B5AD-BE95663B0F51',
-                        cc: 'cd69dd3b-caa7-4860-ab33-1ae817ba4c6d',
-                        pbp: '7ccb34f2-1b7c-45af-bdac-fd2171324776',
-                        dairyFree: '7d670508-53d6-4eba-8877-6c2d7a29a70c'
-                    }
-                    for (var r in R) {
-                        var i = R[r].variation_id,
-                            q = R[r].quantity_on_hand,
-                            b;
-                        for (var e in a) {
-                            if (a[e] == i && q < 1) {
-                                b = $('[name=' + e + ']').closest('.col-xs-8');
-                                $(b).next().remove();
-                                $(b).remove();
-                            }
-                        }
-                    }
-                   CheckFieldset($('#regular'));
-                   CheckFieldset($('#special'));
-                }
-            });
-        })
+//        $(document).ready(function() {
+//            $.ajax({
+//                url: 'https://connect.squareup.com/v1/0ZV4CY2PGCPX2/inventory',
+//                type: 'GET',
+//                beforeSend: function(xhr) {
+//                    xhr.setRequestHeader("Authorization", "BEARER " + 'sq0atp-K4-4TIU5WTHbVAi39c98gA');
+//                },
+//                success: function(R) {
+//                    var a = {
+//                        sccd: '76fcda92-7f9a-4c3b-aede-e2cfd597a7d1',
+//                        mcc: '698406f3-ca5e-4d7f-a0d3-817b619b25ab',
+//                        sfb: '4d3dde4a-e199-4acd-8c06-cd9455b3cb98',
+//                        scc: 'FD3036BA-9590-43F0-B5AD-BE95663B0F51',
+//                        cc: 'cd69dd3b-caa7-4860-ab33-1ae817ba4c6d',
+//                        pbp: '7ccb34f2-1b7c-45af-bdac-fd2171324776',
+//                        dairyFree: '7d670508-53d6-4eba-8877-6c2d7a29a70c'
+//                    }
+//                    for (var r in R) {
+//                        var i = R[r].variation_id,
+//                            q = R[r].quantity_on_hand,
+//                            b;
+//                        for (var e in a) {
+//                            if (a[e] == i && q < 1) {
+//                                b = $('[name=' + e + ']').closest('.col-xs-8');
+//                                $(b).next().remove();
+//                                $(b).remove();
+//                            }
+//                        }
+//                    }
+//                    CheckFieldset($('#regular'));
+//                    CheckFieldset($('#special'));
+//                }
+//            });
+//        })
 
         function CheckFieldset(e) {
             if ($(e).children().length == 1) {
                 $(e).remove();
             }
         }
+
     </script>
 </body>
 
