@@ -40,7 +40,7 @@
     <title>Ice Cream Bro</title>
 </head>
 
-<body class="full" data-spy="scroll" data-target=".order">
+<body class="full">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -68,8 +68,8 @@
             <h2>You need ice cream.<br>We bring it to you.</h2>
             <p>Ordering for someone else? Do that <a href="packages.html">here</a>.<br>Ice cream parties happen <a href="party.html">here</a>.</p>
         </div>
-        <div class="order" id="order">
-            <form action="https://formspree.io/order@icecreambro.com" method="POST" class="form-horizontal" id="order-form">
+        <div class="order">
+            <form action="https://formspree.io/order@icecreambro.com" method="POST" class="form-horizontal">
                 <fieldset class="info">
                     <legend>Info</legend>
                     <div class="col-sm-4">
@@ -268,7 +268,7 @@
                     <button type="submit" class="btn btn-primary btn-lg">Place Order</button>
                 </div>
                 <div class="col-sm-4 col-xs-6 col-sm-offset-3">
-                    <input type="text" class="form-control" id="promo" name="promo" placeholder="Promo Code">
+                    <input type="text" class="form-control" name="promo" placeholder="Promo Code">
                 </div>
                 <a class="btn btn-default" onclick="validateCode()">Apply Code</a>
                 
@@ -278,18 +278,6 @@
         </div>
     </div>
     <script>
-        // Add smooth scrolling to smooth class
-        $(".smooth").on('click', function(e) {
-            if (this.hash !== "") {
-                e.preventDefault();
-                var hash = this.hash;
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 800, function() {
-                    window.location.hash = hash;
-                })
-            };
-        });
 
         // Call Square, check inventory, remove element
 //        $(document).ready(function() {
