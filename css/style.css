@@ -17,7 +17,7 @@ form {
     border-radius: 5px;
     background-color: rgba(0, 0, 0, .2)
 }
-.order form .col-xs-6 {
+.order .info div {
     padding-bottom: 10px;
 }
 .flavors .col-xs-8,
