@@ -55,13 +55,13 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
-<!--                    <li><a href="packages.html">Packages</a></li>-->
+                    <li><a href="packages.html">Packages</a></li>
                     <li><a href="merch.html">Merch</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container party">
+    <div class="container party text-center">
         <div class="row">
             <div class="col-sm-10 col-sm-offset-1">
                 <h1>Ice Cream Parties</h1>
@@ -73,14 +73,14 @@
                 <h3>How Parties Work</h3>
                 <hr>
                 <p>
-                    Have a big event coming up? Let us help you out, with Ice Cream Parties!! Fill out the form below to start the conversation. 
+                    Have a big event coming up? Let us help you out, with Ice Cream Parties. Fill out the form below to start the conversation.
                 </p>
             </div>
         </div>
         <div class="row">
-            <form action="https://formspree.io/order@icecreambro.com" method="POST" class="form-horizontal" id="party-form">
+            <form action="https://formspree.io/order@icecreambro.com" method="POST">
                 <fieldset>
-                    <legend>Info</legend>
+                    <legend class="text-left">Info</legend>
                     <div class="form-group row">
                         <div class="col-xs-4">
                             <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
@@ -106,12 +106,7 @@
                         </div>
                     </div>
                 </fieldset>
-
-                <div class="form-group">
-                    <div class="col-xs-12 submit-button">
-                        <button type="submit" class="btn btn-primary btn-lg">Send Party Details</button>
-                    </div>
-                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Send Party Details</button>
                 <input type="hidden" name="_next" value="pcomplete.html" />
             </form>
         </div>

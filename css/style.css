@@ -9,53 +9,33 @@ h2 {
     font-size: 30px;
 }
 .landing-page {
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
-.landing-page div {
-    text-align: center;
+form {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .2)
 }
-.landing-page .row {
-    padding-top: 10vh;
-}
-.landing-page h3 {
-    margin: 10px 0 0;
-}
-#order {
-    height: 80vh;
+.order .info div {
+    padding-bottom: 10px;
 }
 .flavors .col-xs-8,
 .flavors .col-xs-4 {
-    padding-bottom: 10px;
+    padding: 0 0 10px;
 }
 .flavors select {
     display: none;
 }
-#order .submit-button {
-    margin-top: 20px;
-    text-align: center;
+.order .submit-button {
+    margin-bottom: 20px;
 }
 .about {
     text-align: center;
-    margin-bottom:50px;
+    margin-bottom: 50px;
 }
 .about-text p {
     font-size: 18px;
-}
-.aspect-ratio {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 51%;
-}
-.aspect-ratio iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-}
-.contact {
-    text-align: center;
 }
 .contact .social {
     padding: 50px 0 25px;
@@ -70,7 +50,7 @@ h2 {
 .contact form legend {
     padding-bottom: 10px;
 }
-.contact form .form-group {
+.contact .email div {
     margin: 0 auto 15px;
 }
 .complete {
@@ -85,17 +65,8 @@ h2 {
 .packages {
     margin-bottom: 20px;
 }
-.packages h1 {
-    text-align: center;
-}
-.packages h2 {
-    text-align: center;
-}
-.packages h3 {
-    text-align: center;
-}
 .packages p {
-    font-size: 22px
+    font-size: 18px
 }
 .packages button {
     width: 100%
@@ -108,17 +79,8 @@ h2 {
     border-width: 2px;
     margin-top: 0;
 }
-.party {
-    text-align: center;
-}
 .party p {
     font-size: 22px
-}
-.party form {
-    text-align: left;
-}
-.party .submit-button {
-    text-align: center;
 }
 .party textarea {
     width: 100%;

@@ -1,6 +1,5 @@
 function showQuan(flav) {
     $("select[name=" + flav + "-quantity]").toggle().removeAttr('disabled');
-    validateForm()
 }
 
 function validateCode() {
