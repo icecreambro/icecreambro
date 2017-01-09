@@ -7,9 +7,9 @@ function validateCode() {
     var input = $('[name="promo"]').val().toUpperCase();
     var valid = $.inArray(input, promos) > -1;
     if (valid) {
-        $('.promo').removeClass().addClass('btn btn-success').html('Success!!');
+        $('.promo').removeClass().addClass('btn btn-success promo').html('Success!!');
     } else {
-        $('.promo').removeClass().addClass('btn btn-danger').html('Invalid Code.');
+        $('.promo').removeClass().addClass('btn btn-danger promo').html('Invalid Code.');
     }
 }
 
