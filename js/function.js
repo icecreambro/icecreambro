@@ -4,7 +4,7 @@ function showQuan(flav) {
 
 function validateCode() {
     var promos = ['HILLMAN25', 'JBUCKS25', 'REID']
-    var input = $('input[name="promo"]').val().toUpperCase();
+    var input = $('[name="promo"]').val().toUpperCase();
     var valid = $.inArray(input, promos) > -1;
     if (valid) {
         $('.promo').removeClass().addClass('btn btn-success').html('Success!!');
