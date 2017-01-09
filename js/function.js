@@ -4,12 +4,12 @@ function showQuan(flav) {
 
 function validateCode() {
     var promos = ['HILLMAN25', 'JBUCKS25', 'REID']
-    var input = $('.promo input').val().toUpperCase();
+    var input = $('input[name="promo"]').val().toUpperCase();
     var valid = $.inArray(input, promos) > -1;
     if (valid) {
-        $('.promo .btn').removeClass().addClass('btn btn-success').html('Success!!');
+        $('.promo').removeClass().addClass('btn btn-success').html('Success!!');
     } else {
-        $('.promo .btn').removeClass().addClass('btn btn-danger').html('Invalid Code.');
+        $('.promo').removeClass().addClass('btn btn-danger').html('Invalid Code.');
     }
 }
 
