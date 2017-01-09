@@ -18,20 +18,20 @@
     <!-- Begin Google Analytics -->
 
     <script>
-        //       (function(i, s, o, g, r, a, m) {
-        //           i['GoogleAnalyticsObject'] = r;
-        //           i[r] = i[r] || function() {
-        //               (i[r].q = i[r].q || []).push(arguments)
-        //           }, i[r].l = 1 * new Date();
-        //           a = s.createElement(o),
-        //               m = s.getElementsByTagName(o)[0];
-        //           a.async = 1;
-        //           a.src = g;
-        //           m.parentNode.insertBefore(a, m)
-        //       })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        //
-        //       ga('create', 'UA-75421301-1', 'auto');
-        //       ga('send', 'pageview');
+               (function(i, s, o, g, r, a, m) {
+                   i['GoogleAnalyticsObject'] = r;
+                   i[r] = i[r] || function() {
+                       (i[r].q = i[r].q || []).push(arguments)
+                   }, i[r].l = 1 * new Date();
+                   a = s.createElement(o),
+                       m = s.getElementsByTagName(o)[0];
+                   a.async = 1;
+                   a.src = g;
+                   m.parentNode.insertBefore(a, m)
+               })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        
+               ga('create', 'UA-75421301-1', 'auto');
+               ga('send', 'pageview');
 
     </script>
 
@@ -280,40 +280,40 @@
     <script>
 
         // Call Square, check inventory, remove element
-//        $(document).ready(function() {
-//            $.ajax({
-//                url: 'https://connect.squareup.com/v1/0ZV4CY2PGCPX2/inventory',
-//                type: 'GET',
-//                beforeSend: function(xhr) {
-//                    xhr.setRequestHeader("Authorization", "BEARER " + 'sq0atp-K4-4TIU5WTHbVAi39c98gA');
-//                },
-//                success: function(R) {
-//                    var a = {
-//                        sccd: '76fcda92-7f9a-4c3b-aede-e2cfd597a7d1',
-//                        mcc: '698406f3-ca5e-4d7f-a0d3-817b619b25ab',
-//                        sfb: '4d3dde4a-e199-4acd-8c06-cd9455b3cb98',
-//                        scc: 'FD3036BA-9590-43F0-B5AD-BE95663B0F51',
-//                        cc: 'cd69dd3b-caa7-4860-ab33-1ae817ba4c6d',
-//                        pbp: '7ccb34f2-1b7c-45af-bdac-fd2171324776',
-//                        dairyFree: '7d670508-53d6-4eba-8877-6c2d7a29a70c'
-//                    }
-//                    for (var r in R) {
-//                        var i = R[r].variation_id,
-//                            q = R[r].quantity_on_hand,
-//                            b;
-//                        for (var e in a) {
-//                            if (a[e] == i && q < 1) {
-//                                b = $('[name=' + e + ']').closest('.col-xs-8');
-//                                $(b).next().remove();
-//                                $(b).remove();
-//                            }
-//                        }
-//                    }
-//                    CheckFieldset($('#regular'));
-//                    CheckFieldset($('#special'));
-//                }
-//            });
-//        })
+        $(document).ready(function() {
+            $.ajax({
+                url: 'https://connect.squareup.com/v1/0ZV4CY2PGCPX2/inventory',
+                type: 'GET',
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", "BEARER " + 'sq0atp-K4-4TIU5WTHbVAi39c98gA');
+                },
+                success: function(R) {
+                    var a = {
+                        sccd: '76fcda92-7f9a-4c3b-aede-e2cfd597a7d1',
+                        mcc: '698406f3-ca5e-4d7f-a0d3-817b619b25ab',
+                        sfb: '4d3dde4a-e199-4acd-8c06-cd9455b3cb98',
+                        scc: 'FD3036BA-9590-43F0-B5AD-BE95663B0F51',
+                        cc: 'cd69dd3b-caa7-4860-ab33-1ae817ba4c6d',
+                        pbp: '7ccb34f2-1b7c-45af-bdac-fd2171324776',
+                        dairyFree: '7d670508-53d6-4eba-8877-6c2d7a29a70c'
+                    }
+                    for (var r in R) {
+                        var i = R[r].variation_id,
+                            q = R[r].quantity_on_hand,
+                            b;
+                        for (var e in a) {
+                            if (a[e] == i && q < 1) {
+                                b = $('[name=' + e + ']').closest('.col-xs-8');
+                                $(b).next().remove();
+                                $(b).remove();
+                            }
+                        }
+                    }
+                    CheckFieldset($('#regular'));
+                    CheckFieldset($('#special'));
+                }
+            });
+        })
 
         function CheckFieldset(e) {
             if ($(e).children().length == 1) {
