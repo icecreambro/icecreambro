@@ -88,16 +88,21 @@ h2 {
     resize: none;
     
 }
+.vday {
+    text-align: center;
+}
 .vday form {
+    margin-bottom: 20px;
     padding: 20px;
     border-radius: 5px;
-    background-color: rgba(255, 0, 0, .4)
+    background-color: rgba(255, 0, 0, .4);
 }
 .vday h3 {
     margin: 0;
 }
 .vday textarea {
     resize: none;
+    margin-bottom: 20px;
 }
 @media(max-width: 768px) {
     .submit-button {
