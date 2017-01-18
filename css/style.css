@@ -92,17 +92,24 @@ h2 {
     text-align: center;
 }
 .vday form {
-    margin-bottom: 20px;
-    padding: 20px;
+    margin: 20px 0;
+    padding: 10px 0 20px;
     border-radius: 5px;
     background-color: rgba(255, 0, 0, .4);
+}
+.vday legend {
+    padding-top: 10px;
+}
+.vday .info div {
+    padding-bottom: 10px;
 }
 .vday h3 {
     margin: 0;
 }
 .vday textarea {
-    resize: none;
     margin-bottom: 20px;
+    height: 120px;
+    resize: none;
 }
 @media(max-width: 768px) {
     .submit-button {
