@@ -13,11 +13,15 @@ function validateCode() {
     }
 }
 
+// Set order id
+
 $(function() {
     var id = Math.floor(1000 + Math.random() * 9000)
     $('input[name="_subject"]').val('Order ID: ' + id);
     $('input[name="_next"]').val('complete.html?id='+id);
 })
+
+// Set default time
 
 $(function() {
     var coeff = 1000 * 60 * 5;
@@ -25,7 +29,6 @@ $(function() {
     var rounded = new Date(Math.ceil(today.getTime() / coeff) * coeff);
     var hour = rounded.getHours();
     var min = rounded.getMinutes()+5;
-    console.log(min);
     if (min >= 60) {
         min = min-60;
         hour+=1;
@@ -41,7 +44,7 @@ $(function() {
 })
 
 
-//Initialize Popovers
+// Initialize Popovers
 
 $(function () {
     $('[data-toggle="popover"]').popover()
