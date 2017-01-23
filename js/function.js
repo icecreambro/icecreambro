@@ -19,7 +19,6 @@ $(function () {
     $('input[name="_next"]').val('complete.html?id='+id);
 });
 
-
 //Initialize Popovers
 
 $(function () {

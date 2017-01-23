@@ -20,6 +20,13 @@ form {
 .order .info div {
     padding-bottom: 10px;
 }
+.order [type=time]::-webkit-inner-spin-button, 
+.order [type=time]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
 .flavors .col-xs-8,
 .flavors .col-xs-4 {
     padding: 0 0 10px;
