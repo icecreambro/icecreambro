@@ -111,6 +111,10 @@ h2 {
     height: 120px;
     resize: none;
 }
+.vcomplete img {
+    margin: 40px 0 0;
+    height: 300px;
+}
 @media(max-width: 768px) {
     .submit-button {
         margin-top: 20px;
