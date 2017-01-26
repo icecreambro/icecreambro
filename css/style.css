@@ -20,8 +20,15 @@ h2 {
 .order .info div {
     padding-bottom: 10px;
 }
-.order .flavors .col-xs-8,
-.order .flavors .col-xs-4 {
+.order [type=time]::-webkit-inner-spin-button, 
+.order [type=time]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+.flavors .col-xs-8,
+.flavors .col-xs-4 {
     padding: 0 0 10px;
 }
 .order .flavors select {

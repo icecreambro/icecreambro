@@ -18,20 +18,20 @@
     <!-- Begin Google Analytics -->
 
     <script>
-               (function(i, s, o, g, r, a, m) {
-                   i['GoogleAnalyticsObject'] = r;
-                   i[r] = i[r] || function() {
-                       (i[r].q = i[r].q || []).push(arguments)
-                   }, i[r].l = 1 * new Date();
-                   a = s.createElement(o),
-                       m = s.getElementsByTagName(o)[0];
-                   a.async = 1;
-                   a.src = g;
-                   m.parentNode.insertBefore(a, m)
-               })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        
-               ga('create', 'UA-75421301-1', 'auto');
-               ga('send', 'pageview');
+//               (function(i, s, o, g, r, a, m) {
+//                   i['GoogleAnalyticsObject'] = r;
+//                   i[r] = i[r] || function() {
+//                       (i[r].q = i[r].q || []).push(arguments)
+//                   }, i[r].l = 1 * new Date();
+//                   a = s.createElement(o),
+//                       m = s.getElementsByTagName(o)[0];
+//                   a.async = 1;
+//                   a.src = g;
+//                   m.parentNode.insertBefore(a, m)
+//               })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+//        
+//               ga('create', 'UA-75421301-1', 'auto');
+//               ga('send', 'pageview');
 
     </script>
 
@@ -67,6 +67,7 @@
         <div class="landing-page text-center">
             <h1>Ice Cream Bro</h1>
             <h2>You need ice cream.<br>We bring it to you.</h2>
+            <h3>Thursdays 8P-2A</h3>
             <p>Ordering for someone else? Do that <a href="packages.html">here</a>.<br>Ice cream parties happen <a href="party.html">here</a>.</p>
         </div>
         <div class="order">
@@ -74,19 +75,24 @@
                 <fieldset class="info">
                     <legend>Info</legend>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="name" placeholder="Name" required>
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="name" required>
                     </div>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="number" placeholder="Phone Number" required>
+                        <label>Phone Number</label>
+                        <input type="text" class="form-control" name="number" required>
                     </div>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="email" placeholder="Email" required>
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="email" required>
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="location" placeholder="Location" required>
+                        <label>Location</label>
+                        <input type="text" class="form-control" name="location" required>
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="time" placeholder="Delivery Time" required>
+                        <label>Delivery Time</label>
+                        <input type="time" class="form-control" name="time" step="300" required>
                     </div>
                 </fieldset>
                 <fieldset id="regular" class="flavors">
@@ -208,14 +214,14 @@
                     <legend>Dairy Free Pints - $6 </legend>
                     <div class="col-sm-6">
                         <div class="col-xs-8">
-                            <div class="checkbox">
+                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="CM" onclick="showQuan('CM')"> Chunky Monkey
+                                    <input type="checkbox" name="cm" onclick="showQuan('cm')"> Chunky Monkey
                                 </label>
                             </div>
                         </div>
                         <div class="col-xs-4">
-                            <select class="form-control" name="CM-quantity" disabled>
+                            <select class="form-control" name="cm-quantity" disabled>
                                 <optgroup label="Quantity">
                                     <option>1</option>
                                     <option>2</option>
@@ -225,15 +231,15 @@
                                 </optgroup>
                             </select>
                         </div>
-                        <div class="col-xs-8">
+                         <div class="col-xs-8">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="CFB" onclick="showQuan('CFB')"> Chocolate Fudge Brownie
+                                    <input type="checkbox" name="cfb" onclick="showQuan('cfb')"> Chocolate Fudge Brownie
                                 </label>
                             </div>
                         </div>
                         <div class="col-xs-4">
-                            <select class="form-control" name="CFB-quantity" disabled>
+                            <select class="form-control" name="cfb-quantity" disabled>
                                 <optgroup label="Quantity">
                                     <option>1</option>
                                     <option>2</option>
@@ -248,12 +254,12 @@
                         <div class="col-xs-8">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="CCF" onclick="showQuan('CCF')"> Coffee Caramel Fudge
+                                    <input type="checkbox" name="ccf" onclick="showQuan('ccf')"> Coffee Caramel Fudge
                                 </label>
                             </div>
                         </div>
                         <div class="col-xs-4">
-                            <select class="form-control" name="CCF-quantity" disabled>
+                            <select class="form-control" name="ccf-quantity" disabled>
                                 <optgroup label="Quantity">
                                     <option>1</option>
                                     <option>2</option>
@@ -264,7 +270,7 @@
                             </select>
                         </div>
                     </div>
-                </fieldset>
+                </fieldset>  
                 <div class="submit-button text-center">
                     <button type="submit" class="btn btn-primary btn-lg">Place Order</button>
                 </div>
@@ -321,6 +327,58 @@
                 $(e).remove();
             }
         }
+        
+        // Variable to hold request
+        var request;
+
+        // Bind to the submit event of our form
+        $(".order form").submit(function(event){
+
+            // Abort any pending request
+            if (request) {
+                request.abort();
+            }
+            // setup some local variables
+            var $form = $(this);
+
+            // Let's select and cache all the fields
+            var $inputs = $form.find("input, select, button");
+
+            // Serialize the data in the form
+            var serializedData = $form.serialize();
+
+            // Fire off the request to /form.php
+            request = $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbw2LU4d4FI5xyVZW6ih5ttXuUO7DCJ8vJnHOuht3FVmyjdbS9hb/exec",
+                type: "get",
+                data: serializedData
+            });
+
+            // Callback handler that will be called on success
+            request.done(function (response, textStatus, jqXHR){
+                // Log a message to the console
+                console.log("Hooray, it worked!");
+                console.log(response);
+                console.log(textStatus);
+                console.log(jqXHR);
+            });
+
+            // Callback handler that will be called on failure
+            request.fail(function (jqXHR, textStatus, errorThrown){
+                // Log the error to the console
+                console.error(
+                    "The following error occurred: "+
+                    textStatus, errorThrown
+                );
+            });
+
+            // Callback handler that will be called regardless
+            // if the request failed or succeeded
+            request.always(function () {
+                // Reenable the inputs
+                $inputs.prop("disabled", false);
+            });
+        });
 
     </script>
 </body>
