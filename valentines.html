@@ -276,6 +276,10 @@
                 $('input[name=' + id + ']').prop('checked', true);
             }
         })
+        $(function () {
+            var id = Math.floor(1000 + Math.random() * 9000)
+            $('input[name="_subject"]').val('VDay Order ID: ' + id);
+        });
     </script>
 </body>
 </html>
