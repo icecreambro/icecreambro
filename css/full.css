@@ -10,8 +10,16 @@ body {
 
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
 
-.full {
+.full:not(.pink) {
     background: url('/img/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.full.pink {
+    background: url('/img/vbackground.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
