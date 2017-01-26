@@ -56,8 +56,9 @@ h2 {
 .complete {
     text-align: center;
 }
-.complete form {
-    padding-top: 20px;
+.complete img {
+    margin: 10px 0 20px;
+    width: 100%;
 }
 .email legend {
     padding-bottom: 10px;
