@@ -3,7 +3,7 @@ function showQuan(flav) {
 }
 
 function validateCode() {
-    var promos = ['HILLMAN25', 'JBUCKS25', 'REID']
+    var promos = ['HILLMAN25', 'JBUCKS25', 'REID', 'CHARLIEAMESPROJECT']
     var input = $('[name="promo"]').val().toUpperCase();
     var valid = $.inArray(input, promos) > -1;
     if (valid) {
