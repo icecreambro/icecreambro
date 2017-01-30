@@ -114,6 +114,9 @@ h2 {
 .vday h3 {
     margin: 0;
 }
+.vday .package .btn {
+    margin-bottom: 15px;
+}
 .vday textarea {
     margin-bottom: 20px;
     height: 120px;
