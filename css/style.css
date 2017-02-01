@@ -39,10 +39,38 @@ h2 {
 }
 .about {
     text-align: center;
-    margin-bottom: 50px;
 }
-.about-text p {
-    font-size: 18px;
+.about .logo {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.about .logo img {
+    width: 100%;
+}
+.about .text {
+    font-size: 25px;
+}
+.about .team h2 {
+    padding-bottom: 20px
+}
+.about .solo {
+    width: auto;
+    height: 300px;
+}
+.about p {
+    margin-bottom: 0;
+}
+.about .name {
+    font-size: 30px;
+}
+.about .title {
+    font-size: 20px;
+}
+.about .personal {
+    margin: 10px 0;
+}
+.contact {
+    text-align: center;
 }
 .contact .social {
     padding: 50px 0 25px;
