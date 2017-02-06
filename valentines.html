@@ -78,8 +78,8 @@
         <div class="row">
             <form action="https://formspree.io/vday@icecreambro.com" method="POST">
                 <fieldset class="info">
-                    <!-- Change wording on this one -->
                     <legend>Give Us Some Info</legend>
+                    <p>We need info about the giver, not the reciever.</p>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="name" placeholder="Name" required>
                     </div>
@@ -224,8 +224,8 @@
                             <div class="col-xs-4">
                                 <select class="form-control" name="CM-quantity">
                                     <option disabled selected>Quantity</option> 
-                                        <option>1</option>
-                                        <option>2</option>
+                                    <option>1</option>
+                                    <option>2</option>
                                 </select>
                             </div>
                         </div>
@@ -260,7 +260,17 @@
                 <input type="checkbox" name="night" hidden>
                 <input type="checkbox" name="classic" hidden>
                 <input type="hidden" name="_next" value="vcomplete.html" />
-                <input type="submit" class="btn btn-primary" value="Place Order">
+                <div class="row">
+                    <div class="col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
+                        <select class="form-control" name="payment" required>
+                            <option disabled selected>Payment type</option> 
+                            <option>Pay at Delivery</option>
+                            <option id="online">Card/Venmo Before Delivery</option>
+                        </select>
+                    </div>
+                </div>
+                <p id="help_text">We will send you information regarding online payment.</p>
+                <input type="submit" class="btn btn-primary submit" value="Place Order">
                 <p>*There is a $2 charge for each Dairy Free pint.</p>
                 <input type="hidden" name="_subject" value="" />
             </form>
@@ -281,6 +291,14 @@
             var id = Math.floor(1000 + Math.random() * 9000)
             $('input[name="_subject"]').val('VDay Order ID: ' + id);
         });
+        $('select[name="payment"]').change(function() {
+            var id = $(this).children(":selected").attr("id");
+            if(id == "online") {
+                $("#help_text").show();
+            } else {
+                $("#help_text").hide();
+            }
+        })
     </script>
 </body>
 </html>
