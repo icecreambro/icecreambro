@@ -77,23 +77,27 @@
         
         <div class="row">
             <form action="https://formspree.io/vday@icecreambro.com" method="POST">
-                <fieldset class="info">
-                    <legend>Give Us Some Info</legend>
-                    <p>We need info about the giver, not the receiver.</p>
+                <fieldset class="info text-left">
+                    <legend class="text-center">Give Us Some Info</legend>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="name" placeholder="Name" required>
+                        <label>Receiver's Name</label>
+                        <input type="text" class="form-control" name="name" required>
                     </div>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="number" placeholder="Phone Number" required>
+                        <label>Giver's Phone Number</label>
+                        <input type="text" class="form-control" required>
                     </div>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="email" placeholder="Email" required>
+                        <label>Giver's Email</label>
+                        <input type="text" class="form-control" name="email" required>
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="location" placeholder="Location" required>
+                        <label>Delivery Location</label>
+                        <input type="text" class="form-control" required>
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="time" placeholder="Delivery Time" required>
+                        <label>Delivery Time</label>
+                        <input type="text" class="form-control" name="time" required>
                     </div>
                 </fieldset>
                 <fieldset class="flavor">
