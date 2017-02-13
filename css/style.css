@@ -131,41 +131,8 @@ h2 {
 .vday {
     text-align: center;
 }
-.vday form {
-    margin: 20px 0;
-    padding: 10px 0 20px;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, .4)
-}
-.vday legend {
-    padding-top: 10px;
-}
-.vday h3 {
-    margin: 0;
-}
-.vday .info div {
-    padding-bottom: 10px;
-}
-.vday .info legend {
-    margin-bottom: 5px;
-}
-.vday .package .btn {
-    margin-bottom: 15px;
-}
-.vday textarea {
-    margin-bottom: 20px;
-    height: 120px;
-    resize: none;
-}
-.vday #help_text {
-    display: none;
-}
-.vday .submit {
-    margin-top: 15px;
-}
-.vcomplete img {
-    margin: 40px 0 0;
-    height: 300px;
+.vday h2 {
+    margin-top: 50px;
 }
 @media(max-width: 768px) {
     .submit-button {
