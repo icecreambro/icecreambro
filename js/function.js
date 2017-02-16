@@ -16,7 +16,7 @@ function validateCode() {
 // Set order id
 
 $(function() {
-    var id = Math.floor(1000 + Math.random() * 9000)
+    var id = Math.floor(100000 + Math.random() * 900000)
     $('input[name="_subject"]').val('Order ID: ' + id);
     $('input[name="_next"]').val('complete.html?id='+id);
 })
