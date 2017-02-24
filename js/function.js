@@ -28,7 +28,7 @@ $(function() {
     var today = new Date();
     var rounded = new Date(Math.ceil(today.getTime() / coeff) * coeff);
     var hour = rounded.getHours();
-    var min = rounded.getMinutes()+5;
+    var min = rounded.getMinutes()+10;
     if (min >= 60) {
         min = min-60;
         hour+=1;
